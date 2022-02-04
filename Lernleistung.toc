@@ -1,0 +1,31 @@
+\babel@toc {german}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{3}{}%
+\contentsline {section}{\numberline {2}Wahl der Entwicklungsweise}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Version 1 - Native Entwicklung}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Version 2 - Xamarin Forms}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Version 3 - Flutter}{3}{}%
+\contentsline {section}{\numberline {3}Das Projekt}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Zielsetzung}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Abgrenzung zur Server Ausarbeitung}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Funktionen der App}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Rollen und Registrierung}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Alarmauslösung}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Alarmempfang}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}Vertretungen}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.5}News}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.6}Notfallnummern}{4}{}%
+\contentsline {section}{\numberline {4}Kommunikation mit dem Server}{4}{}%
+\contentsline {subsection}{\numberline {4.1}API-Nutzung}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Nutzung von Firebase-Messaging}{4}{}%
+\contentsline {section}{\numberline {5}Speicherung der Daten}{4}{}%
+\contentsline {subsection}{\numberline {5.1}Umsetzung}{4}{}%
+\contentsline {subsection}{\numberline {5.2}Aufbau der Datenbank}{5}{}%
+\contentsline {section}{\numberline {6}Design Umsetzung}{5}{}%
+\contentsline {section}{\numberline {7}Schultests}{5}{}%
+\contentsline {section}{\numberline {8}Fazit}{5}{}%
+\contentsline {subsection}{\numberline {8.1}Was wurde erreicht}{5}{}%
+\contentsline {subsection}{\numberline {8.2}Wie geht es weiter}{5}{}%
+\contentsline {section}{\numberline {9}Abbildungsverzeichnis}{6}{}%
+\contentsline {section}{\numberline {10}Literaturverzeichnis}{6}{}%
+\contentsline {section}{\numberline {11}Selbstständigkeitserklärung}{6}{}%
+\contentsline {section}{\numberline {12}Anhang}{6}{}%
