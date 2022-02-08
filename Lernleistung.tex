@@ -1,36 +1,39 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{glossaries}
 \usepackage{amsmath}
 \usepackage[german]{babel}
 \usepackage{hyphenat}
+\usepackage{graphicx}
+\usepackage{setspace}
 
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
 
+\graphicspath{ {/images} }
+
 \begin{document}
-
-\title{Besondere Lernleistung - DMergency}
-
-\author{Mattis Rinke}
-
-\date{März 2022}
-
+\onehalfspacing
 
 \titlepage{
-    \vspace*{\fill}
+    \vspace{1cm}
+
     \begin{center}
         \large{
             \begin{center}
                 Gymnasium Nepomucenum Coesfeld \\
             \end{center}
-            
+
             Besondere Lernleistung im Abitur 2022
         }
     \end{center}
-    \;
+    \vspace{0,1cm}
     \begin{center}
-        \LARGE{ \textbf{DMergency - App zur Alarmierung und Verwaltung von Sanitätsdiensten\\}}
+        \includegraphics[width = 5cm, height = 2.5cm]{Nepo_Logo.png}
+    \end{center}
+    \vspace{0,1cm}
+    \begin{center}
+        \Large{ \textbf{DMergency - App zur Alarmierung und Verwaltung von Sanitätsdiensten\\}}
     \end{center}
     \vspace{0,1cm}
     \begin{center}
@@ -38,15 +41,15 @@
     \end{center}
 
     \begin{center}
-        \vspace{2cm}
-        \Large vorgelegt von\\
-        \vspace{3cm}
+        \vspace{0,5cm}
+        \large vorgelegt von\\
+        \vspace{1cm}
         \LARGE{\textbf{Mattis Rinke}}
     \end{center}
 
     \begin{center}
-        \Large{
-            \vspace{3cm}
+        \large{
+            \vspace{2cm}
             Fachbereich Informatik\\
             \vspace{1cm}
             Herr Brumma\\
@@ -55,113 +58,62 @@
     \end{center}
     \vspace*{\fill}
 
-
 }
 \newpage
+\thispagestyle{empty}
 \tableofcontents
+\thispagestyle{empty}
+
 \newpage
-
 \section{Einleitung}
+\setcounter{page}{3}
+    In der heutigen Welt wird der Drang nach Digitalisierung immer größer, wie auch bei Sanitätsdiensten.
+    Die habe ich selbst durch meine Tätigkeit im Schulsanitätsdienst erfahren. Hier wurde bisher meist mit
+    Funkgeräten oder auch mit Schuldurchsagen alarmiert, was den Schulunterricht drastisch gestört hat.
+    Außerdem ist die Alarmierung selbst sehr ineffizient, da zunächst eine Person im Sekretariat oder ähnlichem 
+    informiert werden muss, die anschließend dann die Sanitäter/-innen alarmiert.\\ 
+    Dieses Problem wollte ich angehen, sodass ich mich zusammen mit einem Freund zusammen daran gesetzt habe dieses
+    Problem zu lösen. Durch meine Vorkenntnisse im Fach Informatik bin ich dann schnell auf die Idee gekommen
+    die Alarmierung per App zu gestalten. 
+    Ich habe mich dann, als ich bereits angefangen hatte die App zu programmieren von der Möglichkeit erfahren
+    eine besondere Lernleistung in das Abitur einfließen zu lassen, dazu entschieden dies zu tun.\\
+    In dieser Ausarbeitung gehe ich darauf ein, wie die App entstanden ist, warum ich mich für das Framework Flutter
+    entschieden habe, welche Funktionen die App hat und wie diese umgesetzt wurden.\\
+    Als erstes werde ich skizzieren, was die App warum können soll und beschreibe im Anschluss, wie ich mich von der nativen 
+    Entwicklung zur Nutzung des Cross-Platform-Frameworks Flutter entschieden habe.
+    Danach erkläre ich detaillierter die einzelnen Funktionen der App, woraufhin die Kommunikation mit dem Server und die
+    Speicherung der Daten näher erörtert wird. Zuletzt führe ich noch Ergebnisse der ersten Schultests auf und 
+    ziehe dann ein Fazit, in dem ich erkläre, was in der Ausarbeitung bereits geschafft wurde und wie ich mit der App
+    weiterhin verfahre.
 
-\begin{changemargin}{0,5cm}{0,0cm} 
-    In der heutigen Zeit wird der Drang nach Digitalisierung immer stärker. So auch in Sanitätsdiensten, die darauf angewiesen sind schnell und effizient alarmiert zu werden.
-    Diesen Drang habe ich selbst in meiner Funktion als Schulsanitätsdienst-Leiter und als Mitglied beim DRK mitbekommen. Da ich bereits das ein oder andere kleinere Projekt selbst 
-    programmiert hatte, habe ich mir überlegt selber eine App zum Alarmieren und Verwalten von Sanitätsdiensten zu programmieren, was sich am Ende als deutlich schwieriger und komplexer 
-    rausstellte als am Anfang erwartet.
+\input{Unterdateien/01Projekt.tex}
+\input{Unterdateien/02Entwicklungsweise.tex}
 
-\end{changemargin}
-
-\section{Wahl der Entwicklungsweise}
-    \subsection{Version 1 - Native Entwicklung}
-    \subsection{Version 2 - Xamarin Forms}
-    \subsection{Version 3 - Flutter}
-        Erklärung warum Flutter genutzt wird
-
-\section{Das Projekt}
-\subsection{Zielsetzung}
-\begin{changemargin}{0,5cm}{0,0cm}
-    Ziel des Projekts ist das effiziente und sinnvolle Alarmieren, sowie Verwalten
-    von Sanitätsdiensten. Hierbei soll zum einen die Nutzerfreundlichkeit, als auch
-    die Effizienz und Kompatiblität im Vordergrund stehen. 
-    \\Hierbei geht es grundlegend um die Funktionen der Alarmierung, der Dienstregelungen (Wann hat welcher Sanitäter Dienst) und den Empfang des Alarms.
-    \\Dabei soll die Alarmierung, so intuitiv wie möglich und komplex wie nötig gestalltet werden um den Sanitätern so viele
-    Informationen wie möglich zu geben, den Alarmierungsprozess für den Alarmierenden jedoch nicht unnötig kompliziert zu gestalten.
-    Dies ist vor allem unter dem Punkt zu sehen, dass größtenteils von Laien alarmiert werden soll, da sich das Projekt auf 
-    kleine Sanitätsdienste bzw. Schulsanitätsdienste beschränkt.
-    \\ Um dies Umzusetzen soll eine App programmiert werden, die sich schnell öffnen lässt und von den Alarmierenden schnell
-    genutzt werden kann um die nötigsten Informationen einzugeben und dann schnell zu Alarmieren.
-    Des weiteren soll es in der gleichen App möglich sein die gesendeten Alarme zu empfangen und dann eine Rückmeldung an den betroffenen Alarmierenden zu senden.
-    Damit der Sanitäter nicht dauerhaf im Dienst ist soll es außerdem einen Dienstplan geben, aus dem man sich im Notfall austragen kann oder aber auch den Dienst 
-    eines anderen Sanitäters zu übernehmen, falls dieser verhindert ist.
-\end{changemargin}
-
-\subsection{Abgrenzung zur Server Ausarbeitung}
-\begin{changemargin}{0,5cm}{0,0cm}
-    In dieser Ausarbeitung geht es um die App "Dmergency". Nicht um die Webanwendung, bzw. den Server.
-    Es wird jedoch auf die Kommunkation mit dem Server eingegangen um den Datenfluss darzustellen und die
-    Funktionsweise der App zu verdeutlichen. 
-\end{changemargin}
-
-\subsection{Funktionen der App}
-    \begin{changemargin}{0,5cm}{0,0cm}
-        In den folgenden Abschnitten werden jetzt die Funktionen der App dargestellt und erklärt.
-        Dazu werden beispielhaft einzelne Methodenimplementationen herrausgenommen, erörtert und
-        im Kontext der jeweiligen Funktion erklärt.   
-    \end{changemargin}
-    \subsubsection{Rollen und Registrierung}
-    \subsubsection{Alarmauslösung}
-    \subsubsection{Alarmempfang}
-    \subsubsection{Vertretungen}
-    \subsubsection{News}
-    \subsubsection{Notfallnummern}
-
-\section{Kommunikation mit dem Server}
-\subsection{API-Nutzung}
-\subsection{Nutzung von Firebase-Messaging}
-\section{Speicherung der Daten}
-\subsection{Umsetzung}
-\begin{changemargin}{0,5cm}{0,0cm}
-    Es gibt mehrere Möglichkeiten auf mobilen Endgeräten appspezifische Daten zu speichern.
-    Zum einen gibt es die so genannten SharedPreferences bzw. NSUserDefaults\footnote{SharedPreferences (Android), bzw. NSUserDefaults(iOS) ist platformspezifischer Langzeitspeicher für einfache Daten (String, Integer)}
-    dies sind einfache Schlüssel, mit denen ein Wert verknüpft wird.
-    Eine weitere Möglichkeit ist eine lokale Datei, in welche alle wichtigen Daten geschrieben werden, oder als letzte, dritte Möglichkeit gibt es
-    die Datenbank.
-
-    Im Fall der App DMergency habe ich zunächst versucht die Platform-Nativen Speichermethoden, also die SharedPreferences bzw. die NSUserDefaults, zu nutzen.
-    Dies habe ich gemacht, da ich in der App selbst eigentlich kaum Daten speichern muss, was im Laufe der Ausarbeitung noch deutlich wird.
-    Da die Platform-Nativen Speichermethoden so einfach gehalten sind und in der App nur Strings und Integer gespeichert werden müssen bieten sich diese also sehr gut an.
-
-    Dieser Gedanke musste jedoch schnell verworfen werden, da die Platform-Nativen Speichermethoden unterschiedliche Instanzen in unterschiedlichen Threads haben.
-    \\
-    \\Dies wirft zwei Probleme auf:
-    \item 1. Die Effizienz der App wird stark beeinträchtigt
-    \item 2. Daten können in unterschiedlichen Threads nicht mit den Platform-Nativen Speichermethoden abgerufen werden.
-    \\\\Um Alarme zu empfangen muss ein Hintergrundprozess laufen, welcher in einem anderen Thread arbeitet als der Rest der App.
-    Da jedoch auf die Alarmdaten auch im Rest der App zugegriffen werden muss und auch im Hintergrundprozess auf die gespeicherten Nutzerdaten zurückgegriffen werden muss, sind die
-    platformspezifischen Speichermethoden für die App nicht in Frage gekommen.
-
-    Daher habe ich mich dazu entschieden eine Datenbank anzulegen, welche als lokale Datei auf dem Handy abgelegt ist.
-    Dadurch ist es mögich jederzeit auf alle Daten zuzugreifen und die Probleme, der Effizienz und der Speicherung der Daten sind behoben.
-    
-
-\end{changemargin}
-\subsection{Aufbau der Datenbank}
-\section{Design Umsetzung}
-
-\section{Schultests}
-
-\section{Fazit}
-\subsection{Was wurde erreicht}
-\subsection{Wie geht es weiter}
-\cite{VeniceSpringer}
+\section{Entwicklung}
+\input{Unterdateien/03AppFunktionen}
+\input{Unterdateien/04Server.tex}
+\input{Unterdateien/05Datenbank.tex}
+\input{Unterdateien/06Schultest.tex}
+\include{Unterdateien/07Fazit.tex}
 
 \section{Abbildungsverzeichnis}
 \section{Literaturverzeichnis}
-    \bibliographystyle{plain}
-    \bibliography{Lernleistung}
-\section{Selbstständigkeitserklärung}
+
+\begin{thebibliography}{9}
+    \bibitem{Rettungskette}https://www.drk.de/hilfe-in-deutschland/erste-hilfe/rettungskette/rettungskette-uebersicht/
+    \bibitem{Android}https://www.android.com/, Offizielle Android-Seite
+    \bibitem{iOS}https://www.apple.com/de/ios/ios-15/, Offizielle iOS-Seite
+    \bibitem{flutter.dev}https://www.flutter.dev, Dokumentation des Flutter-Frameworks
+\end{thebibliography}
+
 \section{Anhang}
 
-\newpage
+Hiermit erkläre ich, Mattis Rinke, dass ich diese Ausarbeitung ohne fremde Hilfe
+angefertigt und nur die im Literaturverzeichnis aufgeführten
+Quellen und Hilfsmittel verwendet habe.\\
+\begin{center}
+    ........................, den ..........................................................................................
 
+\end{center}
+\quad\quad  (Ort)    \hfil           (Datum)                   \hfil  (Unterschrift)
 \end{document}
