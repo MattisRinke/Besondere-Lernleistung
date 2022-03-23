@@ -22,9 +22,9 @@
 \contentsline {subsubsection}{\numberline {4.3.1}Umsetzung}{19}{}%
 \contentsline {subsubsection}{\numberline {4.3.2}Aufbau der Datenbank}{21}{}%
 \contentsline {section}{\numberline {5}Schultests}{23}{}%
-\contentsline {section}{\numberline {6}Fazit}{24}{}%
-\contentsline {subsection}{\numberline {6.1}Was wurde erreicht}{24}{}%
-\contentsline {subsection}{\numberline {6.2}Wie geht es weiter}{24}{}%
-\contentsline {section}{\numberline {7}Abbildungsverzeichnis}{25}{}%
-\contentsline {section}{\numberline {8}Literaturverzeichnis}{25}{}%
-\contentsline {section}{\numberline {9}Anhang}{27}{}%
+\contentsline {section}{\numberline {6}Fazit}{25}{}%
+\contentsline {subsection}{\numberline {6.1}Was wurde erreicht}{25}{}%
+\contentsline {subsection}{\numberline {6.2}Wie geht es weiter}{25}{}%
+\contentsline {section}{\numberline {7}Abbildungsverzeichnis}{26}{}%
+\contentsline {section}{\numberline {8}Literaturverzeichnis}{26}{}%
+\contentsline {section}{\numberline {9}Anhang}{28}{}%

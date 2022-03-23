@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.20)  23 MAR 2022 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.20)  23 MAR 2022 11:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -343,16 +343,16 @@ Overfull \hbox (5.3626pt too wide) in paragraph at lines 51--59
 \OT1/cmr/m/n/12 Die Ta-bel-le Lo-gin hat ei-ne Nutzer-ID, wel-che ein In-te-ger und der Prim[]arschl[]us-
  []
 
-) (./Unterdateien/06Schultest.tex [22]) [23]
+) (./Unterdateien/06Schultest.tex [22]) [23] [24]
 \openout2 = `Unterdateien/07Fazit.aux'.
 
- (./Unterdateien/07Fazit.tex) [24
+ (./Unterdateien/07Fazit.tex) [25
 
 ] (./Lernleistung.lof)
 \tf@lof=\write4
 \openout4 = `Lernleistung.lof'.
 
- [25
+ [26
 
 
 ]
@@ -365,12 +365,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--124
 []\OT1/cmr/m/n/12 https://www.datenschutz-grundverordnung.eu/grundverordnung/art-
  []
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 129--132
 
  []
 
-[27] (./Lernleistung.aux (./Unterdateien/07Fazit.aux)) ) 
+[28] (./Lernleistung.aux (./Unterdateien/07Fazit.aux)) ) 
 Here is how much of TeX's memory you used:
  7737 strings out of 478286
  130073 string characters out of 5850726
@@ -380,10 +380,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  91i,8n,91p,1225b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on Lernleistung.pdf (27 pages, 149115 bytes).
+Output written on Lernleistung.pdf (28 pages, 150151 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
