@@ -6,11 +6,12 @@
 \usepackage{hyphenat}
 \usepackage{graphicx}
 \usepackage{setspace}
+\usepackage{float}
 
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
 
-\graphicspath{ {/images} }
+\graphicspath{\main/images}
 
 \begin{document}
 \onehalfspacing
@@ -29,7 +30,7 @@
     \end{center}
     \vspace{0,1cm}
     \begin{center}
-        \includegraphics[width = 5cm, height = 2.5cm]{Nepo_Logo.png}
+        \includegraphics[width = 5cm, height = 2.5cm]{images/Nepo_Logo.png}
     \end{center}
     \vspace{0,1cm}
     \begin{center}
@@ -66,25 +67,30 @@
 
 \newpage
 \section{Einleitung}
-\setcounter{page}{3}
+\setcounter{page}{4}
     In der heutigen Welt wird der Drang nach Digitalisierung immer größer, wie auch bei Sanitätsdiensten.
     Die habe ich selbst durch meine Tätigkeit im Schulsanitätsdienst erfahren. Hier wurde bisher meist mit
     Funkgeräten oder auch mit Schuldurchsagen alarmiert, was den Schulunterricht drastisch gestört hat.
     Außerdem ist die Alarmierung selbst sehr ineffizient, da zunächst eine Person im Sekretariat oder ähnlichem 
     informiert werden muss, die anschließend dann die Sanitäter/-innen alarmiert.\\ 
-    Dieses Problem wollte ich angehen, sodass ich mich zusammen mit einem Freund zusammen daran gesetzt habe dieses
-    Problem zu lösen. Durch meine Vorkenntnisse im Fach Informatik bin ich dann schnell auf die Idee gekommen
+    Um hier Verbesserung zu schaffen, habe ich mich dann nach Apps für eine einfache Alarmierung umgeguckt. Dabei habe ich dann
+    mehrere Apps gefunden unter anderem die Apps "Sanialarm" und "Divera 24/7", beide haben die grundsätzlichen Voraussetzungen um 
+    für den Schulsanitätsdienst genutzt zu werden: Beide Apps können Alarmieren und einen Dienstplan erstellen.
+    Jedoch haben beide auch ihre Einschränkungen, wodurch diese nicht komplett für den Schulsanitätsdienst geeignet sind. 
+    Zum Beispiel ist die Alarmierung von Sanialarm nicht zuverlässig und die Erstellung des Dienstplans muss bei Divera für jeden Tag einzeln erfolgen.
+    Aufgrund dieser Einschränkungen habe ich mich zusammen mit einem Freund darangesetzt diese Problem zu lösen.
+    Durch meine Vorkenntnisse im Fach Informatik bin ich dann schnell auf die Idee gekommen
     die Alarmierung per App zu gestalten. 
     Ich habe mich dann, als ich bereits angefangen hatte die App zu programmieren von der Möglichkeit erfahren
     eine besondere Lernleistung in das Abitur einfließen zu lassen, dazu entschieden dies zu tun.\\
     In dieser Ausarbeitung gehe ich darauf ein, wie die App entstanden ist, warum ich mich für das Framework Flutter
     entschieden habe, welche Funktionen die App hat und wie diese umgesetzt wurden.\\
-    Als erstes werde ich skizzieren, was die App warum können soll und beschreibe im Anschluss, wie ich mich von der nativen 
-    Entwicklung zur Nutzung des Cross-Platform-Frameworks Flutter entschieden habe.
-    Danach erkläre ich detaillierter die einzelnen Funktionen der App, woraufhin die Kommunikation mit dem Server und die
-    Speicherung der Daten näher erörtert wird. Zuletzt führe ich noch Ergebnisse der ersten Schultests auf und 
-    ziehe dann ein Fazit, in dem ich erkläre, was in der Ausarbeitung bereits geschafft wurde und wie ich mit der App
-    weiterhin verfahre.
+    Als erstes werde ich skizzieren, was die App warum können soll und beschreibe im Anschluss, wie
+    ich mich von der nativen Entwicklung zur Nutzung des Cross-Platform-Frameworks Flutter entschieden habe.
+    Danach erkläre ich detaillierter die einzelnen Funktionen der App, woraufhin die Kommunikation mit dem 
+    Server und die Speicherung der Daten näher erörtert wird. Zuletzt führe ich noch Ergebnisse der ersten 
+    Schultests auf und ziehe dann ein Fazit, in dem ich erkläre, was in der Ausarbeitung bereits geschafft 
+    wurde und wie ich mit der App weiterhin verfahre.
 
 \input{Unterdateien/01Projekt.tex}
 \input{Unterdateien/02Entwicklungsweise.tex}
@@ -97,23 +103,34 @@
 \include{Unterdateien/07Fazit.tex}
 
 \section{Abbildungsverzeichnis}
+\listoffigures
+
 \section{Literaturverzeichnis}
 
 \begin{thebibliography}{9}
-    \bibitem{Rettungskette}https://www.drk.de/hilfe-in-deutschland/erste-hilfe/rettungskette/rettungskette-uebersicht/
+    \bibitem{Rettungskette}https://www.drk.de/hilfe-in-deutschland/erste-hilfe/rettungskette\\/rettungskette-uebersicht/
     \bibitem{Android}https://www.android.com/, Offizielle Android-Seite
     \bibitem{iOS}https://www.apple.com/de/ios/ios-15/, Offizielle iOS-Seite
+    \bibitem{Marktanteil}https://de.statista.com/statistik/daten/studie/256790/umfrage\\/marktanteile-von-android-und-ios-am-smartphone-absatz-in\\-deutschland/\#:~:text=Marktanteile\%20von\%20Android\%20und\\\%20iOS,2021\&text=Im\%203\%2DMonatszeitraum\%20Oktober\\\%20bis,iPhone\%20betrug\%2030\%2C9\%20Prozent.
+    \bibitem{Xamarin}https://docs.microsoft.com/en-us/xamarin/xamarin-forms/,Xamarin \\Forms Dokumentation
+    \bibitem{Dart}https://dart.dev/, Dart Dokumentation
     \bibitem{flutter.dev}https://www.flutter.dev, Dokumentation des Flutter-Frameworks
+    \bibitem{Stateless-Widget}https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html,\\ Dokumentation der Klasse Stateless-Widget
+    \bibitem{Stateful-Widget}https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html, Dokumentation der Klasse Stateful-Widget
+    \bibitem{Futures}https://dart.dev/codelabs/async-await, Dokumentation von Asynchronität
+    \bibitem{FCM-Update}https://firebase.google.com/docs/cloud-messaging/manage-tokens, Aktualisierung von FCM-Token, Firebase-Dokumentation
+    \bibitem{sqlite-Datatypes}https://pub.dev/packages/sqflite\#:~:text=Supported\%20SQLite\%20types\%20\%23, sqlite - supported Datentypen
+    \bibitem{DSGVO}https://www.datenschutz-grundverordnung.eu/grundverordnung/art-5-ds-gvo/, DSGVO-Artikel 5
 \end{thebibliography}
 
+\newpage
 \section{Anhang}
 
 Hiermit erkläre ich, Mattis Rinke, dass ich diese Ausarbeitung ohne fremde Hilfe
-angefertigt und nur die im Literaturverzeichnis aufgeführten
-Quellen und Hilfsmittel verwendet habe.\\
-\begin{center}
-    ........................, den ..........................................................................................
+angefertigt habe und nur die im Literaturverzeichnis aufgeführten
+Quellen und Hilfsmittel genutzt wurden.\\
 
-\end{center}
+    ........................, den .................................................................................
+
 \quad\quad  (Ort)    \hfil           (Datum)                   \hfil  (Unterschrift)
 \end{document}

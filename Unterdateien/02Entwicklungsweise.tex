@@ -1,20 +1,62 @@
 \section{Wahl der Entwicklungsweise}
 Es gibt in der Programmierung etliche Möglichkeiten der Programmierung. Auch in der Entwicklung für mobile Endgeräte.
-Als ich mit dem Projekt angefangen habe, habe ich zunächst den mir am sinnvollsten erscheinenden Weg genommen. Die native Entwicklung.
-Dadurch, dass die App für unterschiedliche Betriebssysteme erhältlich sein soll, muss dies in dem Fall dann zweimal geschehen.
-Einmal für das Betriebssystem Android\cite{Android}, von Google, und für das Betriebssystem iOS\cite{iOS} von Apple.
-Es gibt aber auch die Möglichkeit der Cross-Platform-Programmierung, bei der für beide Betriebssysteme gleichzeitig programmiert wird.
-Ich habe mich zunächst für die native Programmierung entschieden, jedoch habe ich mich im Entwicklungsprozess von der nativen Entwicklung zur
-Cross-Platform-Programmierung mit dem Framework Xamarin-Forms bewegt um schließlich das Framework Flutter zu verwenden.
-Was die Vor- und Nachteile sind und warum ich mich letztendlich für die Cross-Platform-Programmierung mit Flutter entschieden habe
-erkläre ich in den nächsten drei Abschnitten.
+Als ich mit dem Projekt angefangen habe, habe ich zunächst den mir am sinnvollsten erscheinenden Weg genommen. 
+Die native Entwicklung. Dadurch, dass die App für unterschiedliche Betriebssysteme erhältlich sein soll, 
+muss dies in dem Fall dann zweimal geschehen. Einmal für das Betriebssystem Android\cite{Android}, von Google, und für
+das Betriebssystem iOS\cite{iOS} von Apple. Es gibt aber auch die Möglichkeit der Cross-Platform-Programmierung, bei 
+der für beide Betriebssysteme gleichzeitig programmiert wird. Ich habe mich zunächst für die native Programmierung 
+entschieden, jedoch habe ich mich im Entwicklungsprozess von der nativen Entwicklung zur Cross-Platform-Programmierung 
+mit dem Framework Xamarin-Forms bewegt um schließlich das Framework Flutter zu verwenden. Was die Vor- und Nachteile
+sind und warum ich mich letztendlich für die Cross-Platform-Programmierung mit Flutter entschieden habe erkläre ich in 
+den nächsten drei Abschnitten.
 
     \subsection{Version 1 - Native Entwicklung}
-    %Beginn mit der nativen Entwicklung beschreiben
-    %Erklären, warum es keinen Sinn macht als Einzelner Programmierer native Entwicklung zu nutzen
+    Zunächst habe ich mit der nativen Entwicklung von Android begonnen, da ich die eine garantierte Kompatibilität
+    mit dem gewünschten Betriebssystem habe. Dies stellte sich als einfach heraus, da ich hier in der 
+    Programmiersprache Java schreiben muss, die ich bereits aus dem Informatik-Unterricht kannte.
+    Hier hatte ich dann nach einiger Zeit eine vor**läufig fertige App programmiert, in welcher
+    man einen Alarm auslösen und empfangen konnte.
+    Da der Markt zwischen Apple und Google in Sachen Handy-Betriebssysteme bei ca. 70\% zu 30\% 
+    liegt\cite{Marktanteil}, habe ich schnell gemerkt, dass ich die App auch für iOS entwickeln muss.
+    Um alle Funktionen immer auf jeder Platform verfügbar zumachen muss bei dieser Entwicklungsmethode
+    jede Funktion zweimal programmiert werden. Dies ist für mich als Einzelperson nicht machbar, weshalb
+    ich mich neu orientieren musste. Ich habe mich weiter informiert und habe dann die Methode des 
+    Cross-Platform-Programmings gefunden, auf welche ich in den nächsten zwei Abschnitten eingehen werde.
     \subsection{Version 2 - Xamarin Forms}
-    %Cross-Platform-Programmierung anreißen
-    %Erklären, warum Xamarin-Forms nichts für mich war --> Umständliche UI-Programmierung
+    Xamarin Forms ist ein Framework der .NET-Platform von Microsoft. Dieses Framework ist ein 
+    Cross-Platform-Framework, das heißt, dass der Code einmalig für die beiden Betriebssysteme (Android \& iOS)
+    geschrieben wird und die App dann für beide erhältlich ist.
+    Xamarin Forms hat eine Unterteilung zwischen dem funktionalen Code, welcher in C\# geschrieben ist, und zwischen
+    der der Markup Language XAML, welche das GUI darstellt\cite{Xamarin}.
+    Jedoch sind bei der Nutzung von Cross-Platform-Frameworks auch Einbußungen zu machen. In diesem Fall konnte 
+    ich mich zum einen nicht mit der Markup Language XAML anfreunden, zum anderen musste ich jedoch auch 
+    herausfinden, dass Xamarin einige von mir benötigte Funktionen nicht voll oder gar nicht unterstützt. 
+    Unter anderem gab es immer wieder Probleme beim einbinden von Firebase-Messaging, ein Tool von Google,
+    zum versenden von Push-Notifications (Auf Firebase-Messaging gehe ich im Laufe der Ausarbeitung noch ein).
+    Durch diese für mich nicht lösbaren Probleme musste ich mich dann erneut auf die Suche nach einer anderen
+    Lösung machen. Um diese Lösung geht es jetzt im nächsten Abschnitt.
     \subsection{Version 3 - Flutter}
-    %Flutter vorstellen
-    %Vorteile von Flutter erklären
+    Die dritte und bis jetzt finale Version ist in Flutter geschrieben und die am weitesten entwickelte App-Version.
+    Die Entscheidung für Flutter viel nach mehreren Empfehlungen, sowie nach eigener Recherche. 
+    Flutter nutzt eine einfache Programmiersprache, die Java ähnelt, weshalb mir der Einstieg in die
+    Programmiersprache Dart\cite{Dart} nicht schwer gefallen ist. Flutter ist wie Xamarin-Forms ein 
+    Cross-Platform Framework. Dieses ist in der Lage Apps für die beiden gängigen Plattformen iOS und Android 
+    zu kompilieren\footnote{Kompilieren beschreibt das Umwandeln des geschriebenen Programmtextes in ein 
+    funktionsfähiges Programm}, sowie für das Web.
+    Das Nutzer-Interface wird in Flutter durch so genannte Widgets, welche in einem Widget-Tree 
+    aufgenommen werden, dargestellt. Hierbei wird dann zwischen Stateless\cite{Stateless-Widget}-
+    und Stateful\cite{Stateful-Widget}-Widgets unterschieden. Der Unterschied hier ist, dass in Stateless-Widgets
+    zwar Variablen, etc. abgeändert werden können, jedoch wird das Widget im UI nicht aktualisiert. 
+    Es können aber in dem Widget selbst andere Widgets, die selbst Stateful-Widgets sind, aktualisiert werden.
+    Ein Stateful-Widget besteht aus zwei Klassen. Der Klasse, die um die Klasse Stateful-Widget erweitert wird 
+    und der Klasse, die um die Klasse State erweitert wird. In der Klasse mit dem Stateful Widget wird in der
+    createState-Methode die Klasse mit dem State zurückgegeben. Der eigentliche Widget-Tree wird dann erst in
+    der build-Methode der State-Klasse geschrieben und dann auch zurückgegeben.
+    Nach dem der Widget-Tree dann erstellt wurde kann bei Bedarf durch die Methode setState das UI aktualisiert werden.
+    Außerdem gibt es asynchrone Methoden und Futures\cite{Futures}.
+    Diese sind dazu da das Programm weiterhin Code ausführen zu lassen, während dieses gleichzeitig darauf 
+    wartet, dass die asynchrone Methode fertig wird. Dies wird oft dazu genutzt Daten vom Netzwerk zu laden
+    oder in eine Datenbank zu schreiben. Die meist genutzten Datentypen sind: int, String, bool, List, Future und Map.
+    Ich habe mich nach einiger Überlegung und Recherche dann letztendlich für Flutter als Framework 
+    entschieden, weil ich zum einen nur einen Code für die beiden Plattformen iOS und Android schreiben muss 
+    und zum anderen da das UI einfach programmierbar ist und Flutter sehr performant ist.
