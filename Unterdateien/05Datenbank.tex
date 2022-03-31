@@ -2,64 +2,104 @@
 \subsubsection{Umsetzung}
     Es gibt mehrere Möglichkeiten auf mobilen Endgeräten App-spezifische Daten zu speichern.
     Zum einen gibt es die so genannten SharedPreferences bzw. NSUserDefaults
-    \footnote{SharedPreferences (Android), bzw. NSUserDefaults(iOS) ist plattformspezifischer Langzeitspeicher für einfache Daten (String, Integer)}
-    dies sind einfache Schlüssel, mit denen ein Wert verknüpft wird.
-    Eine weitere Möglichkeit ist eine lokale Datei, in welche alle wichtigen Daten geschrieben werden, oder als letzte, dritte Möglichkeit gibt es
+    \footnote{SharedPreferences (Android), bzw. NSUserDefaults(iOS) ist plattformspezifischer 
+    Langzeitspeicher für einfache Daten (String, Integer)} dies sind einfache Schlüssel, mit 
+    denen ein Wert verknüpft wird. Eine weitere Möglichkeit ist eine lokale Datei, in welche 
+    alle wichtigen Daten geschrieben werden, oder als letzte, dritte Möglichkeit gibt es
     die Datenbank.
 
-    Im Fall der App DMergency habe ich zunächst versucht die Platform-Nativen Speichermethoden, also die SharedPreferences bzw. die NSUserDefaults, zu nutzen.
-    Dies habe ich gemacht, da ich in der App selbst eigentlich kaum Daten speichern muss, was durch die später folgende Skizzierung des Aufbaus der letztendlich genutzten Datenbank deutlich wird.
-    Die SharedPreferences und NSUserDefaults sind generell sehr einfach gehalten, da die Daten über einen eindeutigen String identifiziert werden. Das heißt also es gibt einen "Schlüssel", der zu einem Wert zugeordnet wird.
-    Die SharedPreferences bzw. NSUserDefaults können als Datentypen dann entweder einen String, einen int oder einen boolean zugewiesen bekommen.
-    Wie bereits erwähnt habe ich zunächst diese Methode verwendet, da sie zum einen einfach ist, zum anderen aber auch kaum Daten gespeichert werden müssen.
+    Im Fall der App DMergency habe ich zunächst versucht die Platform-Nativen Speichermethoden, 
+    also die SharedPreferences bzw. die NSUserDefaults, zu nutzen. Dies habe ich gemacht, da ich 
+    in der App selbst eigentlich kaum Daten speichern muss, was durch die später folgenden 
+    Skizzierung des Aufbaus der letztendlich genutzten Datenbank deutlich wird. Die 
+    SharedPreferences und NSUserDefaults sind generell sehr einfach gehalten, da die Daten über 
+    einen eindeutigen String identifiziert werden. Das heißt also es gibt einen "Schlüssel", der 
+    zu einem Wert zugeordnet wird. Die SharedPreferences bzw. NSUserDefaults können als 
+    Datentypen dann entweder einen String, einen int oder einen boolean zugewiesen bekommen.
+    Wie bereits erwähnt habe ich zunächst diese Methode verwendet, da sie zum einen einfach ist, 
+    zum anderen aber auch kaum Daten gespeichert werden müssen.
 
-    Diese Methode musste ich jedoch schnell wieder verwerfen, da Flutter mit sogenannten Isolates arbeitet. Diese sind etwas ähnliches wie Threads, was bewirken soll, dass mehrere Funktionen gleichzeitig laufen können.
-    Jedoch haben die SharedPreferences bzw. die NSUserDefaults dann pro Isolate eine eigene Instanz, was bedeutet, dass die Daten, die in der einen Isolate gespeichert wurden nicht von der anderen Isolate aus bearbeitet werden kann oder ähnliches.
-    Dies ist ein Problem, da die Alarme, durch den Cloud-Messaging-Dienst Firebase-Messaging empfangen werden, dieser arbeitet dauerhaft in einer anderen Isolate als die Hauptisolate der App, da diese dauerhaft im Hintergrund laufen muss um die Alarme
-    empfangen zu können. 
-    Da ich aber auf die Daten, die durch Firebase-Messaging gesendet werden angewiesen bin um diese in der App anzeigen zu können muss eine andere Lösung gefunden werden, um die Daten zu speichern, da ich keinen direkten Zugriff auf die Instanz von Firebase-Messaging habe.
+    Diese Methode musste ich jedoch schnell wieder verwerfen, da Flutter mit sogenannten Isolates 
+    arbeitet. Diese sind etwas ähnliches wie Threads, was bewirken soll, dass mehrere Funktionen 
+    gleichzeitig laufen können. Jedoch haben die SharedPreferences bzw. die NSUserDefaults dann 
+    pro Isolate eine eigene Instanz, was bedeutet, dass die Daten, die in der einen Isolate 
+    gespeichert wurden nicht von der anderen Isolate aus bearbeitet werden kann oder ähnliches.
+    Dies ist ein Problem, da die Alarme, durch den Cloud-Messaging-Dienst Firebase-Messaging 
+    empfangen werden, dieser arbeitet dauerhaft in einer anderen Isolate als die Haupt-Isolate 
+    der App, da diese dauerhaft im Hintergrund laufen muss um die Alarme empfangen zu können. 
+    Da ich aber auf die Daten, die durch Firebase-Messaging gesendet werden angewiesen bin um 
+    diese in der App anzeigen zu können muss eine andere Lösung gefunden werden, um die Daten 
+    zu speichern, da ich keinen direkten Zugriff auf die Instanz von Firebase-Messaging habe.
 
-    \noindent Dadurch habe ich überlegt, dass ich die Daten dann in eine lokale Datei schreibe, um dann auf diese von jeder Instanz aus zugreifen zu können. Da dies jedoch eher Umständlich ist habe ich dann nach weiteren Möglichkeiten geguckt und bin zu dem Entschluss gekommen, dass die beste Möglichkeit, die Daten 
-    zu speichern, ist, diese in einer lokalen Datenbank-Datei zu speichern und die Daten dann von den jeweiligen Isolates abzuändern oder aufzurufen.
+    Dadurch habe ich überlegt, dass ich die Daten dann in eine lokale Datei schreibe, um dann 
+    auf diese von jeder Instanz aus zugreifen zu können. Da dies jedoch eher Umständlich ist habe 
+    ich dann nach weiteren Möglichkeiten geguckt und bin zu dem Entschluss gekommen, dass die 
+    beste Möglichkeit, die Daten zu speichern, ist, diese in einer lokalen Datenbank-Datei zu 
+    speichern und die Daten dann von den jeweiligen Isolates abzuändern oder aufzurufen.
 
-    \noindent Dies ist letztendlich auch die Methode, die ich am Ende implementiert habe.
+    Dies ist letztendlich auch die Methode, die ich am Ende implementiert habe.
 \subsubsection{Aufbau der Datenbank}
 
-    Im folgenden Abschnitt werde ich jetzt skizzieren, welche Daten in speichere, warum ich diese speichere und wie ich darauffolgend die Datenbank aufgebaut habe.
-    Um die Funktion der App gewährleisten zu können müssen Daten des Nutzers gespeichert werden. 
-    Hierbei wird natürlich auf die Datenschutzbestimmungen geachtet.
-    Diese besagen, dass alle erhobenen Daten nur für ihren angegebenen Zweck genutzt werden dürfen (Zweckbindung) und nur so viele Daten erhoben werden sollen wie benötigt werden(Datenminimierung)\cite{DSGVO}.
-    In meinem Fall speichere ich zunächst einmal den Namen, bzw. den Nutzernamen des Nutzers / der Nutzerin, um der Sanitätsdienst-Administration zu ermöglichen die Nutzer/-innen zu identifizieren.
-    Zudem wird die E-Mail des/der Nutzer/-in gespeichert, um die Nutzer/-innen eindeutig im System identifizieren zu können, daher: Die E-Mail-Adresse ist im gesamten Sanitätsdienst einzigartig.
-    Außerdem wird das Geschlecht und die Qualifikation der Sanitäter/-innen gespeichert um den Administrator/-innen eine gute Dienstplanung zu ermöglichen.
-    Außerdem wird zu jedem/-r Nutzer/-in die zugehörige Rolle gespeichert, also ob sie Sanitäter/-in oder Alarmierende/-r sind.
+    Im folgenden Abschnitt werde ich jetzt skizzieren, welche Daten in speichere, warum ich 
+    diese speichere und wie ich darauffolgend die Datenbank aufgebaut habe. Um die Funktion der 
+    App gewährleisten zu können müssen Daten des Nutzers gespeichert werden. Hierbei wird 
+    natürlich auf die Datenschutzbestimmungen geachtet. Diese besagen, dass alle erhobenen Daten 
+    nur für ihren angegebenen Zweck genutzt werden dürfen (Zweckbindung) und nur so viele Daten 
+    erhoben werden sollen wie benötigt werden(Datenminimierung)\cite{DSGVO}. In meinem Fall 
+    speichere ich zunächst einmal den Namen, bzw. den Nutzernamen des Nutzers / der Nutzerin, 
+    um der Sanitätsdienst-Administration zu ermöglichen die Nutzer/-innen zu identifizieren.
+    Zudem wird die E-Mail des/der Nutzer/-in gespeichert, um die Nutzer/-innen eindeutig im 
+    System identifizieren zu können, daher: Die E-Mail-Adresse ist im gesamten Sanitätsdienst 
+    einzigartig. Außerdem wird das Geschlecht und die Qualifikation der Sanitäter/-innen 
+    gespeichert um den Administrator/-innen eine gute Dienstplanung zu ermöglichen.
+    Außerdem wird zu jedem/-r Nutzer/-in die zugehörige Rolle gespeichert, also ob sie 
+    Sanitäter/-in oder Alarmierende/-r sind.
     
-    \noindent Es werden jedoch nicht nur die Login-Daten gespeichert, sondern auch die Daten der Alarme. Auf den Smartphones der Sanitäter/-innen werden jedoch nur die Daten gespeichert, die für den/die Sanitäter/-in
-    relevant sind. Dies ist zum einen die Alarm-ID, welche zur eindeutigen Identifikation des Alarms benötigt wird, zum anderen werden aber auch der Alarmierungszeitpunkt(Datum \& Zeit), die Beschreibung, der Ort und die Priorität gespeichert, um
-    dem/der Sanitäter/-in möglichst viele Informationen über die Alarmierung zu geben. Der Alarmierungszeitpunkt ist zum Beispiel wichtig, wenn der Alarm verzögert kommen sollte, sodass der/die Sanitäter/-in weiß, dass eventuell Eile geboten ist, da schon mehr Zeit vergangen ist als eigentlich sollte.
-    Als letztes wird für jeden Alarm die Rückmeldung des/der jeweiligen Sanitäter/-in die eigene Rückmeldung gespeichert, also ob der Alarm empfangen, Bestätigt oder Abgelehnt wurde.
+    Es werden jedoch nicht nur die Login-Daten gespeichert, sondern auch die Daten der 
+    Alarme. Auf den Smartphones der Sanitäter/-innen werden jedoch nur die Daten gespeichert, die 
+    für den/die Sanitäter/-in relevant sind. Dies ist zum einen die Alarm-ID, welche zur 
+    eindeutigen Identifikation des Alarms benötigt wird, zum anderen werden aber auch der 
+    Alarmierungszeitpunkt(Datum \& Zeit), die Beschreibung, der Ort und die Priorität gespeichert,
+    um dem/der Sanitäter/-in möglichst viele Informationen über die Alarmierung zu geben. Der 
+    Alarmierungszeitpunkt ist zum Beispiel wichtig, wenn der Alarm verzögert kommen sollte, 
+    sodass der/die Sanitäter/-in weiß, dass eventuell Eile geboten ist, da schon mehr Zeit 
+    vergangen ist als eigentlich sollte. Als letztes wird für jeden Alarm die Rückmeldung des/der 
+    jeweiligen Sanitäter/-in die eigene Rückmeldung gespeichert, also ob der Alarm empfangen, 
+    Bestätigt oder Abgelehnt wurde.
 
     %Ausführen, warum welcher Datentyp wofür verwendet wird.
 
     \vspace{5mm}
-    \noindent Die Datenbank sieht dann wie folgt aus: 
+    Die Datenbank sieht dann wie folgt aus: 
 
     \vspace{5mm}
-    \noindent Die Tabelle Alarme hat wie in der Abbildung zu sehen eine Alarm-ID, welche ein Integer und zugleich der Primärschlüssel ist, da die Alarme mit ihrer Alarm-ID eindeutig identifiziert wird und somit einzigartig pro Sanitätsdienst ist.
-    Die Beschreibung, der Ort, die Priorität, die Zeit und das Datum des Alarms werden als TEXT(String) abgespeichert, da diese theoretisch jede beliebige Zeichenkette enthalten können (sollen).
+    Die Tabelle Alarme hat wie in der Abbildung zu sehen eine Alarm-ID, welche ein Integer und 
+    zugleich der Primärschlüssel ist, da die Alarme mit ihrer Alarm-ID eindeutig identifiziert 
+    wird und somit einzigartig pro Sanitätsdienst ist. Die Beschreibung, der Ort, die Priorität, 
+    die Zeit und das Datum des Alarms werden als TEXT(String) abgespeichert, da diese theoretisch 
+    jede beliebige Zeichenkette enthalten können (sollen).
 
-    \noindent Die Tabelle Login hat eine Nutzer-ID, welche ein Integer und der Primärschlüs-sel ist, da die Nutzer-ID den Login eindeutig kennzeichnet und über diese der/die Nutzer/-in eindeutig identifiziert wird.
-    Außerdem gibt es das Attribut role, welches die Rolle des Nutzenden beschreibt. Hier nutze ich den Datentypen Integer um zwischen Sanitäter/-innen (role = 0) und Alarmierenden (role = 1) zu unterscheiden.
-    Ich habe keinen boolean gewählt, da ich die Möglichkeit offenlassen möchte auch die Unterscheidung zum Administrator zu ermöglichen, da wie ich später noch ausführen werde noch einige Funktionen implementiert werden sollen, die 
-    bisher nicht implementiert sind.
-    Des weiteren hat die Tabelle das Attribut loggedin, vom Datentyp TEXT, mit welchem ich überprüfe ob der Nutzer angemeldet ist oder nicht. Hierzu sollte eigentlich der Datentyp boolean verwendet werden, jedoch ist dieser von dem sqlite-package nicht supported\cite{sqlite-Datatypes}.
-    Zudem gibt es eine sanID als Integer-Attribut, welches den Sanitätsdienst beschreibt, dem der/die Sanitäter/-in angehört.
-    Des weiteren werden der Vorname, der Nachname die Qualifikation und das Geschlecht der Nutzerin / des Nutzers als TEXT gespeichert.
-    Das letzte Attribut, welches gespeichert ist, ist volume, welches vom Datentyp REAL ist. In diesem speichere ich einen double, welcher die in den Einstellungen festgelegte Lautstärke für Alarme speichert.
+    Die Tabelle Login hat eine Nutzer-ID, welche ein Integer und der Primärschlüssel ist, da die 
+    Nutzer-ID den Login eindeutig kennzeichnet und über diese der/die Nutzer/-in eindeutig 
+    identifiziert wird. Außerdem gibt es das Attribut role, welches die Rolle des Nutzenden 
+    beschreibt. Hier nutze ich den Datentypen Integer um zwischen Sanitäter/-innen (role = 0) und 
+    Alarmierenden (role = 1) zu unterscheiden. Ich habe keinen boolean gewählt, da ich die 
+    Möglichkeit offenlassen möchte auch die Unterscheidung zum Administrator zu ermöglichen, da 
+    wie ich später noch ausführen werde noch einige Funktionen implementiert werden sollen, die 
+    bisher nicht implementiert sind. Des weiteren hat die Tabelle das Attribut \glqq loggedin
+    \grqq{}, vom Datentyp TEXT, mit welchem ich überprüfe ob der Nutzer angemeldet ist oder 
+    nicht. Hierzu sollte eigentlich der Datentyp boolean verwendet werden, jedoch ist dieser von 
+    dem sqlite-package nicht supported\cite{sqlite-Datatypes}. Zudem gibt es eine sanID als 
+    Integer-Attribut, welches den Sanitätsdienst beschreibt, dem der/die Sanitäter/-in angehört.
+    Des weiteren werden der Vorname, der Nachname die Qualifikation und das Geschlecht der 
+    Nutzerin / des Nutzers als TEXT gespeichert. Das letzte Attribut, welches gespeichert ist, 
+    ist volume, welches vom Datentyp REAL ist. In diesem speichere ich einen double, welcher die 
+    in den Einstellungen festgelegte Lautstärke für Alarme speichert.
 
-    \noindent Dies kann in der unten aufgeführten Abbildung nochmal entnommen werden.
+    Dies kann in der unten aufgeführten Abbildung nochmal entnommen werden.
 
-    \noindent Wie bereits durch meine Ausführungen deutlich geworden sein sollte, wurde bei jeder erhobenen Information darauf geachtet, dass nur die Daten erhoben werden, die 
-    für die Funktion der App von Nöten sind, wodurch die DSGVO in der App eingehalten wird.
-    Diese gibt vor, dass alle erhobenen Daten nur für den angegebenen Zweck genutzt werden dürfen und nur Daten erhoben werden sollten, die unbedingt genutzt werden müssen\cite{DSGVO}.
-    %Datenschutz mit einbeziehen --> Nur die Daten die benötigt sind, etc.
+    Wie bereits durch meine Ausführungen deutlich geworden sein sollte, wurde bei jeder 
+    erhobenen Information darauf geachtet, dass nur die Daten erhoben werden, die für die 
+    Funktion der App von Nöten sind, wodurch die DSGVO in der App eingehalten wird.
+    Diese gibt vor, dass alle erhobenen Daten nur für den angegebenen Zweck genutzt werden dürfen 
+    und nur Daten erhoben werden sollten, die unbedingt genutzt werden müssen\cite{DSGVO}.

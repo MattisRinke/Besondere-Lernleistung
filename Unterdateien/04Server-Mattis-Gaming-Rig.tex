@@ -12,7 +12,7 @@ angegeben. Diese bestehen meistens aus der Sanitätsdienst-ID, der Nutzer-ID,
 der Nutzer-Rolle und weiteren spezifischen Attributen je nach Daten, die 
 abgefragt werden sollen.
 
-Der Aufbau einer solchen Anfrage würde dann wie folgt aussehen: 
+\noindent Der Aufbau einer solchen Anfrage würde dann wie folgt aussehen: 
 %Bild einfügen: https://www.dmergency.de/Alarmfeedback?schoolid=2&ssdid=2&typeid=0&alid=4
 %               schema      domain          path        attributes      
 Nach dem Empfang der Daten vom Server wird die Antwort des Servers zunächst 
@@ -70,61 +70,26 @@ Programmiersprachen und Betriebssysteme vergleichen} ist, als der Code
 der den Vordergrund-Teil der App verarbeitet, wodurch unter anderem nicht 
 auf die gleichen Daten zugegriffen werden kann, etc.
 
-Um Firebase-Messaging zu nutzen muss zunächst auf der Firebase-Seite ein Projekt 
-konfiguriert werden, in welchem festgelegt wird, welche Apps dem Projekt angehören 
-und die Nachrichten vom Server erhalten. Danach müssen die Apps, die in diesem 
-Projekt genutzt werden sollen konfiguriert werden. Um eine Android-App zu 
-Konfigurieren muss der Android-Paketname und ein Name zur Identifizierung 
-der App angegeben werden. Im Anschluss muss dann eine Konfigurationsdatei 
-(google-services.json) heruntergeladen werden und dem Flutter-Projekt hinzugefügt 
-werden (siehe Abbildung).
+Um Firebase-Messaging zu nutzen muss zunächst auf der Firebase-Seite ein Projekt konfiguriert
+werden, in welchem festgelegt wird, welche Apps dem Projekt angehören und die Nachrichten vom 
+Server erhalten. 
+Danach müssen die Apps, die in diesem Projekt genutzt werden sollen konfiguriert werden. 
+Um eine Android-App zu Konfigurieren muss der Android-Packagename und ein Name zur Identifizierung 
+der App angegeben werden. Im Anschluss muss dann eine Konfigurationsdatei (google-services.json)
+heruntergeladen werden und dem Flutter-Projekt hinzugefügt werden (siehe Abbildung).
 
-Das gleiche muss auch für iOS gemacht werden nur, dass der Ort und die Art der 
-Konfigurationsdatei variiert (siehe Abbildung). Bei iOS ist es somit eine 
-Info.plist-Datei anstatt der google-services.json-Datei.
+Das gleiche muss auch für iOS gemacht werden nur, dass der Ort und die Art der Konfigurationsdatei
+variiert (siehe Abbildung).
 
-Danach muss noch jeweils Plattform spezifischer Code eingefügt werden, worauf 
-ich jetzt jedoch nicht weiter eingehen werde, da dieser von Firebase selbst 
-vorgegeben wird und nur an der richtigen Stelle eingefügt werden muss.
-Um jetzt jedoch Firebase-Messaging nutzen zu können muss zunächst im Code die 
-Firebase-App initialisiert werden und danach ein Background-Prozess gestartet 
-werden, damit die Alarme auch wenn die App geschlossen ist empfangen werden können.
+Danach muss noch jeweils Plattform spezifischer Code eingefügt werden, worauf ich jetzt jedoch nicht weiter 
+eingehen werde, da dieser von Firebase selbst vorgegeben wird und nur an der richtigen Stelle eingefügt 
+werden muss.
+Um jetzt jedoch Firebase-Messaging nutzen zu können muss zunächst im Code die Firebase-App initialisiert werden 
+und danach ein Background-Prozess gestartet werden, damit die Alarme auch wenn die App geschlossen ist empfangen 
+werden können.
 
-Um diesen Hintergrundprozess zu starten muss eine Methode erstellt werden, die die 
-empfangenen Nachrichten verarbeitet. Dafür muss in der Methode 
-FirebaseMessaging.onBackgroundMessage() eine globale Methode mitgegeben werden. 
-Außerdem muss auf die Methode FirebaseMessaging.onMessage gehorcht werden. 
-Dies geschieht durch den Aufruf von \glqq .listen\grqq{} auf die Methode 
-FirebaseMessaging.onMessage. In der Methode listen() muss dann erneut die Nachricht, 
-welche vom Server gesendet wurde verarbeitet werden. Außerdem muss auf die Methode 
-Firebase.instance.onTokenRefresh gehört werden, um die Verarbeitung zu regeln, wenn
-der App ein neuer Token zugewiesen wird. Als letzte Methode muss dann noch auf die 
-Methode FirebaseMessaging.onMessageOpenedApp() gehört werden, sodass verarbeitet 
-werden kann wenn die App über das Klicken auf die Benachrichtigung geöffnet wird.
-
-In diesem Projekt wird, wenn sich der Token abändert, der Token an den Server 
-übermittelt, damit der/die Nutzer/-in jeder Zeit alarmiert werden kann, da sollte 
-der Token der App unterschiedlich sein zu dem, der auf dem Server gespeichert ist, 
-kann der/die Nutzer/-in nicht über die Firebase-Nachrichten erreicht werden.
-
-In der listen-Methode von FirebaseMessaging.onMessageOpenedApp() wird zurzeit als 
-einziges der Alarmsound gestoppt, ich habe mich dazu entschieden dies hier einzubauen, 
-da die Sanitäter/-innen meist ihr Handy zunächst entsperren und im Anschluss dann auf 
-die Benachrichtigung gucken, da die Sanitäter/-innen dann meist auf die Benachrichtigung 
-klicken, da sie so die App öffnen können, hielt ich es am sinnvollsten das Stoppen des 
-Sounds hier einzubauen, zusätzlich zu der Möglichkeit den Sound durch das Rückmelden in 
-der App auszuschalten.
-
-In der Methode onBackgroundMessage müssen deutlich mehr Daten verarbeitet werden. 
-Zu aller Erst wird überprüft ob die Nachricht das das Attribut\glqq Backpack\grqq{} mit 
-dem Wert \glqq true\grqq{}enthält um zu überprüfen ob dies eine Benachrichtigung darüber 
-ist, dass jemand anderes das Material holt oder ob die Firebase-Nachricht ein Alarm ist. 
-Danach müssen die Alarmdaten, welche durch die Firebase-Nachricht empfangen wurden in die 
-Datenbank geschrieben werden, um diese auch später noch anzeigen zu lassen.
-Zeitgleich wird außerdem der Alarmsound gestartet um den/die Sanitäter/-in über den 
-Alarm zu informieren.
-
-Zuletzt wird dann eine Request an den Server gesendet, in welcher darüber informiert 
-wird, dass der Alarm von der Nutzer/-in empfangen wurde. Dazu wird dem Server die NutzerID,
-die SanitätsdienstID und die Rückmeldung als int geschickt, in diesem Fall wird 0 
-mitgeschickt, da dies die Information ist, dass der Alarm empfangen wurde.
+Um diesen Hintergrundprozess zu starten muss eine Methode erstellt werden, die die empfangenen Nachrichten 
+verarbeitet. Dafür muss in der Methode FirebaseMessaging.onBackgroundMessage() eine globale Methode mitgegeben 
+werden. Außerdem muss auf die Methode FirebaseMessaging.onMessage gelistened werden. Dies geschieht durch den Aufruf 
+von \glqq .listen\grqq{} auf die Methode FirebaseMessaging.onMessage. In der Methode listen() muss dann erneut die 
+Nachricht, welche vom Server gesendet wurde verarbeitet werden.
