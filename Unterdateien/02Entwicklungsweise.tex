@@ -41,15 +41,11 @@
     nur für meinen eigenen Sanitätsdienst zu entwickeln, sondern diese auch an weitere Sanitätsdienste
     zu verkaufen. Um dies zu bewerkstelligen musste ich jetzt also zum einen die App sowohl für
     Android, als auch für iOS zu entwickeln, da der Marktanteil von Apple bei 30\% und der von Google bei
-    70\% liegen
-
-
-    Da der Markt zwischen Apple und Google in Sachen Handy-Betriebssystemen bei ca. 70\% zu
-    30\% liegt\cite[vgl.]{Marktanteil}, habe ich schnell gemerkt, dass ich die App auch für 
-    iOS entwickeln muss. UM sicherzustellen, dass alle Funktionen immer auf jeder Plattform 
-    zur Verfügung stehen, ist es bei dieser Entwicklungsmethode notwendig, jede Funktion 
-    zweimal zu programmieren. Dies ist als Einzelperson nicht machbar, weshalb ich mich neu
-    orientierte. Recherchearbeiten führten mich dann zu der Methode des Cross-Platform-
+    70\% liegen\cite[vgl.]{Marktanteil}. Bei der nativen Entwicklung müsste ich jetzt also 
+    den Code für das \glqq gleiche\grqq{} Produkt zweimal schreiben, da ich die App einmal in
+    Objective-C/Swift und einmal in Java/Kotlin schreiben müsste.
+    Dies ist als Einzelperson nicht machbar, weshalb ich mich neu orientierte. 
+    Recherchearbeiten führten mich dann zu der Methode des Cross-Platform-
     Programmings, welche in den nächsten zwei Unterkapiteln erläutert werden.
 
 \subsection{Version 2 - Xamarin Forms}
@@ -77,23 +73,23 @@
     z.B. durch einen Freund, welcher bereits durch ein Praktikum bei der Firma d.velop mit 
     diesem Erfahrung sammeln konnte, sowie nach eigener Recherche. Flutter nutzt eine 
     einfache Programmiersprache, die Java ähnelt, weshalb mir der Einstieg in die 
-    Programmiersprache Dart\cite{Dart} nicht schwergefallen ist. Flutter ist wie Xamarin-
+    Programmiersprache Dart\cite{Dart} nicht schwergefallen ist. Flutter ist wie Xamarin-Forms
     ein Cross-Platform Framework. Dieses ist in der Lage Apps für die beiden gängigen 
     Plattformen iOS und Android zu kompilieren\footnote{Kompilieren beschreibt das Umwandeln
     des geschriebenen Programmtextes in ein funktionsfähiges Programm}, sowie für das Web.
     Das Nutzer-Interface ist in Flutter durch so genannte Widgets, welche in einem Widget-
-    Tree aufgenommen werden, dargestellt. Hierbei wird dann zwischen \"Stateless"
-    \cite{Stateless-Widget}- und \"Stateful"\cite{Stateful-Widget}-Widgets unterschieden. 
-    Der Unterschied liegt darin, dass in \"Stateless-Widgets" zwar Variablen, etc. abgeändert 
+    Tree aufgenommen werden, dargestellt. Hierbei wird dann zwischen \glqq Stateless\grqq
+    \cite{Stateless-Widget}- und \glqq Stateful\grqq\cite{Stateful-Widget}-Widgets unterschieden. 
+    Der Unterschied liegt darin, dass in \glqq Stateless-Widgets\grqq{} zwar Variablen, etc. abgeändert 
     werden können, jedoch wird das Widget im GUI nicht neu gerendert. Es können aber in dem 
-    Widget selbst andere Widgets, die selbst \"Stateful-Widgets" sind, aktualisiert werden.
+    Widget selbst andere Widgets, die selbst \glqq Stateful-Widgets\grqq{} sind, aktualisiert werden.
     Ein Stateful-Widget besteht aus zwei Klassen. Der Klasse, die um die Klasse 
-    \"Stateful-Widget" erweitert wird und der Klasse, die um die Klasse 
-    State\cite{State} erweitert wird. In der Klasse mit dem Stateful Widget wird in der
-    \"createState"-Methode die Klasse mit dem State zurückgegeben. Der eigentliche Widget-Tree
-    wird dann erst in der \"build-Methode" der State-Klasse geschrieben und dann auch 
+    \glqq Stateful-Widget\grqq{} erweitert wird und der Klasse, die um die Klasse 
+    \glqq State\grqq{}\cite{State} erweitert wird. In der Klasse mit dem Stateful Widget wird in der
+    \glqq createState\grqq{}-Methode die Klasse mit dem State zurückgegeben. Der eigentliche Widget-Tree
+    wird dann erst in der \glqq build-Methode\grqq{} der State-Klasse geschrieben und dann auch 
     zurückgegeben. Nach der Erstellung des Widget-Trees kann bei Bedarf durch die Methode 
-    \"setState" das UI aktualisiert werden. Außerdem gibt es asynchrone Methoden und 
+    \glqq setState\grqq{} das UI aktualisiert werden. Außerdem gibt es asynchrone Methoden und 
     Futures\cite{Futures}. Diese sind dazu da das Programm weiterhin Code ausführen zu lassen,
     während das Programm gleichzeitig darauf wartet, dass die asynchrone Methode fertig wird. 
     Dies wird oft dazu genutzt Daten vom Netzwerk zu laden oder in eine Datenbank zu 
@@ -101,4 +97,6 @@
     Nach einiger Überlegung und Recherchen ist die Entscheidung letztendlich für flutter als 
     Framework gefallen, weil zum einen nur einmal Code für die beiden Plattformen iOS und 
     Android geschrieben werden muss und zum anderen das GUI einfacher programmierbar ist als 
-    z.B. mit Xamarin Forms und Flutter sehr performant ist.
+    z.B. mit Xamarin Forms und Flutter sehr performant ist. In dieser Version sind die Funktionen
+    der Alarmierung, des Alarm Empfangens, der Vertretung für den aktuellen Tag, das wählen von 
+    Notfallnummern, die News und die Einstellungen implementiert.
