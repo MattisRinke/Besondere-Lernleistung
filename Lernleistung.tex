@@ -81,32 +81,34 @@
     Diese Notwendigkeit und das Bedürfnis nach vereinfachten Abläufen habe ich selbst 
     erfahren und ist mir durch meine leitende Tätigkeit im Schulsanitätsdienst besonders 
     deutlich geworden, da ich hier Diensteinteilungen, Vertretungen erkrankter 
-    Mitschüler/-innen und die Alarmierung mit den Funkgeräten organisieren muss, wodurch
+    Mitschüler/-innen und die Alarmierung mit den Funkgeräten organisieren muss, weswegen
     ich selbst die Digitalisierung von Sanitätsdiensten als sinnvoll und notwendig erachte.
     Hier wurde bisher meist mit Funkgeräten oder auch mit Schuldurchsagen alarmiert, was
     den Schulunterricht drastisch gestört hat.
+    %TODO: Weniger Verschaltet
     Außerdem ist die Alarmierung selbst sehr ineffizient, da zunächst eine Person 
     im Sekretariat oder ähnlichem informiert werden muss, die permanent als 
     Ansprechpartner vor Ort sein muss, informiert wird, um im Anschluss daran die 
     Sanitäter/ -innen zu alarmieren.
+    %TODO: END - Weniger Verschaltet
 
     Deshalb suchte ich nach Apps, die eine Entlastung sowie eine einfache Alarmierung 
     ermöglichen.Ich stieß auf mehrere Apps bei der Recherche, unter anderem sie Apps 
-    "Sanialarm" und "Divera 24/7". Beide weisen grundsätzlich die Voraussetzungen zur 
+    \glqq Sanialarm\grqq{} und \glqq Divera 24/7\grqq. Beide weisen grundsätzlich die Voraussetzungen zur 
     Nutzung im Schulsanitätsdienst auf: Beide Apps können Alarmieren und einen Dienstplan
     erstellen. Jedoch haben  auch beide Einschränkungen, wodurch diese nicht komplett 
-    für den Schulsanitätsdienst geeignet sind, wie sich durch die unzuverlässige 
+    für den Schulsanitätsdienst geeignet sind. Dies lässt sich durch die unzuverlässige 
     Alarmierung bei Sanialarm und die umständliche Dienstplan-Erstellung bei Divera, bei 
-    der man jeden Tag (also pro Datum) einen Dienst erstellen muss, feststellen ließ, 
-    so dass an dieser Stelle keine tatsächliche Erleichterung durch die 
-    Digitalisierung erfolgt. 
+    der man jeden Tag (also pro Datum) einen Dienst erstellen muss, feststellen. 
+    An dieser Stelle erfolgt also keine tatsächliche Erleichterung durch die 
+    Digitalisierung. 
 
-    Durch meine Vorkenntnisse im Fach Informatik bin ich dann schnell auf die Idee gekommen
-    selbst eine App zu selbst zu gestalten und habe es mir, zusammen mit einem
+    Durch meine Vorkenntnisse im Fach Informatik bin ich dann schnell auf die Idee gekommen,
+    selbst eine App zu gestalten und habe es mir, zusammen mit einem
     Freund, zur Aufgabe gemacht, diese Probleme zu lösen sowie reibungslose Abläufe und
     Planungen für einen Schulsanitätsdienst zu ermöglichen.
     In dieser Ausarbeitung gehe ich auf den Entwicklungsprozess der App ein, warum ich 
-    mich für das Framework Flutter entschieden habe, welche Funktionen die App hat und wie
+    mich für das Framework\cite{Framework} Flutter entschieden habe, welche Funktionen die App hat und wie
     diese umgesetzt wurden.
     
     Als erstes werde ich skizzieren, was die App können soll, weshalb bestimmte 
@@ -129,12 +131,11 @@
 \input{Unterdateien/06Schultest.tex}
 \input{Unterdateien/07Fazit.tex}
 
-\section{Abbildungsverzeichnis}
+\section{Anhang}
 \listoffigures
 
-\section{Literaturverzeichnis}
-
 \begin{thebibliography}{9}
+    \bibitem{Framework}https://bsh-ag.de/it-wissensdatenbank/framework/,\\ Definition Framework
     \bibitem{Rettungskette}https://www.drk.de/hilfe-in-deutschland/erste-hilfe/rettungskette\\
     /rettungskette-uebersicht/
     \bibitem{Android}https://www.android.com/, Offizielle Android-Seite
@@ -157,6 +158,7 @@
     \bibitem{Futures}https://dart.dev/codelabs/async-await, Dokumentation von Asynchronität
     \bibitem{FCM-Update}https://firebase.google.com/docs/cloud-messaging/manage-tokens, 
     Aktualisierung von FCM-Token, Firebase-Dokumentation
+    \bibitem{Isolates}https://medium.com/flutter-community/thread-and-\\isolate-with-flutter-30b9631137f3, Isolate Dokumentation
     \bibitem{sqlite-Datatypes}https://pub.dev/packages/sqflite\#:~:text=Supported\%20SQLite\\
     \%20types\%20\%23, sqlite - Unterstützte Datentypen
     \bibitem{DSGVO}https://www.datenschutz-grundverordnung.eu/grundverordnung/\\
@@ -164,9 +166,11 @@
 \end{thebibliography}
 
 \newpage
-\section{Anhang}
+\begin{figure}
+    \textbf{\Large{Selbstständigkeitserklärung}}
+\end{figure}
 
-Hiermit erkläre ich, Mattis Rinke, dass ich diese Ausarbeitung ohne fremde Hilfe
+\noindent Hiermit erkläre ich, Mattis Rinke, dass ich diese Ausarbeitung ohne fremde Hilfe
 angefertigt habe und nur die im Literaturverzeichnis aufgeführten
 Quellen und Hilfsmittel genutzt wurden.\\
 

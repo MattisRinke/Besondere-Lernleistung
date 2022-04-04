@@ -1,29 +1,32 @@
 \subsection{Kommunikation mit dem Server}
 Um alle Funktionen anbieten zu können müssen einige Funktionen auf einen Server
 ausgelagert werden. Unter anderem werden hier die Sanitätsdienste mit ihren 
-Sanitäter/-innen und Alarmierenden verwaltet. Im Folgenden werde ich nun zu erst
-die API-Nutzung darlegen und im Anschluss Firebase-Messaging erklären, sowie auf
+Sanitäter/-innen und Alarmierenden verwaltet. Im Folgenden werde ich nun zuerst
+die Nutzung der API (Application Programming Interface; Dieses stellt eine Schnittstelle zwischen 
+mehreren Anwendungen zur Verfügung) darlegen und im Anschluss Firebase-Messaging erklären, sowie auf
 die Implementierung von Firebase-Messaging eingehen.
 \subsubsection{API-Nutzung}
-Die API funktioniert so, dass ich zunächst eine Request, also eine https-Anfrage,
-an den Server sende. Hierbei spezifiziere ich zunächst den Pfad (/path) und 
-danach werden Attribute in der query \\(?attribut1\=wert1\&attribut2\=wert2) 
+Die API funktioniert so, dass zunächst eine Request, also eine https-Anfrage,
+an den Server gesendet wird. Hierbei wird zunächst der Pfad (/path) und 
+danach die Attribute in der query \\(?attribut1$=$wert1\&attribut2$=$wert2) 
 angegeben. Diese bestehen meistens aus der Sanitätsdienst-ID, der Nutzer-ID, 
-der Nutzer-Rolle und weiteren spezifischen Attributen je nach Daten, die 
+der Nutzer-Rolle und weiteren spezifischen Attributen, je nach Daten, die 
 abgefragt werden sollen.
 
 Der Aufbau einer solchen Anfrage würde dann wie folgt aussehen: 
 %Bild einfügen: https://www.dmergency.de/Alarmfeedback?schoolid=2&ssdid=2&typeid=0&alid=4
 %               schema      domain          path        attributes      
 Nach dem Empfang der Daten vom Server wird die Antwort des Servers zunächst 
-in einem JSON-Array gespeichert um dann weiter verarbeitet zu werden. Dieser ist
+in einem JSON-Array (JSON ist ein Datenformat, in welchem Daten gespeichert werden können.
+Ein JSON-Array setzt sich entweder aus Position und Wert, oder aus Schlüsselwort und Wert zusammen.
+Zum Beispiel: 0: Wert1) gespeichert um dann weiter verarbeitet zu werden. Dieser ist
 dann je nach Art der benötigten Daten 1-3 Dimensional. Zum Beispiel ist der 
 JSON-Array für die Berechtigungen 1 Dimensional, der JSON-Array für die 
 Sanitäter/-innen, die aktuell Dienst haben 2 Dimensional usw.
 
 Durch die API ist die Programmierung deutlich einfacher und die App kleiner, da
 ich so alle Daten, die für die Nutzer/-innen nicht direkt relevant sind auf dem 
-Server abspeichern kann, beziehungsweise, diese auch abfragen oder ändern kann,
+Server abspeichern kann, beziehungsweise diese auch abfragen oder ändern kann,
 wodurch auf dem Handy selbst weniger Speicherplatz benötigt wird, da hier weniger 
 Daten lokal gespeichert werden und weniger Systemressourcen benötigt werden, da
 mehrere Prozesse auch durch den Server erledigt werden.
@@ -31,100 +34,99 @@ mehrere Prozesse auch durch den Server erledigt werden.
 
 
 \subsubsection{Nutzung von Firebase-Messaging}
-Firebase-Messaging wird genutzt um die Alarme die, ausgelöst und vom Server
+Firebase-Messaging wird genutzt, um die Alarme, die ausgelöst und vom Server
 verarbeitet werden, vom Server an die Smartphones der Sanitäter/-innen zu 
 schicken. Hierzu habe ich mich entschieden, da Firebase-Messaging mit den 
 beiden Plattformen, iOS und Android, für welche auch meine App erhältlich ist, 
-kompatibel ist und ich daher ohne Probleme Push-Notifications an die Smartphones
-der Sanitäter/-innen geschickt werden können. Da der Server, dies auch 
+kompatibel ist und daher ohne Probleme Benachrichtigungen an die Smartphones
+der Sanitäter/-innen geschickt werden können. Da der Server dies auch 
 unterstützt und dafür die Möglichkeit bereitstellt, war dies schnell umgesetzt.
 
 Firebase-Messaging ist ein Cloud-Messaging Service von Google. Dieser 
-Service ist in der Lage Push-Notifications an Clients zu schicken. Dieses erfolgt
+Service ist in der Lage, Benachrichtigungen an Clients (Hier sind die jeweils installierten Apps
+der Nutzer/-innen gemeint) zu schicken. Dieses erfolgt
 über einen sogenannten FCM(Firebase-Cloud-Messaging)-Token, welcher einem 
 spezifischen Gerät bei der Installation der App zugewiesen wird. Jeder FCM-Token
 ist einzigartig und wird von Zeit zu Zeit auf jedem Gerät aktualisiert.
 \cite{FCM-Update} Das Aktualisieren des Tokens kann durch mehrere Ereignisse 
-ausgelöst werden. Zum einen dies dadurch ausgelöst werden, wenn die App auf 
-einem anderen Gerät wieder hergestellt wird, oder der Nutzer die App 
-deinstalliert bzw. diese reinstalliert, oder wenn der Nutzer die App-Daten löscht.
+ausgelöst werden. Zum Einen kann dies dadurch ausgelöst werden, wenn die App auf 
+einem anderen Gerät wieder hergestellt wird, oder der/die Nutzer/-in die App 
+deinstalliert bzw. diese reinstalliert, oder wenn der/die Nutzer/-in die App-Daten löscht.
 
 Firebase-Nachrichten sind grundlegend immer gleich aufgebaut. 
 Grundlegend sind Firebase Nachrichten JSON-Arrays. Diese haben immer einen
-message-Teil, dieser kann dann noch weiter aufgedröselt werden. Ein wichtiger 
+message-Teil, welcher dann noch weiter aufgeteilt werden werden. Ein wichtiger 
 Teil, der in fast allen Nachrichten enthalten ist, ist der notification-Teil. 
 In diesem wird dann der Notification-title und Notification-body angegeben, 
 welche in der Notification angezeigt wird. Außerdem gibt es den data-Teil, 
-welcher für die Daten Übermittlung zwischen Gerät und Server wichtig ist, da 
+welcher für die Datenübermittlung zwischen Gerät und Server wichtig ist, da 
 dieser selbst gestaltet werden kann. Durch den Server ist hier vorgegeben, 
 dass bei jedem Alarm eine AlarmId, ein Alarm-Ort, eine Alarm-Beschreibung,
 eine Alarm-Priorität, die Zeit der Alarmauslösung, sowie das Datum von dem 
 Alarm in dem Data-Teil des JSON-Arrays mitgegeben werden.
 
 Firebase-Messaging stellt jedoch auch, wie sich im Laufe der Arbeit auch noch
-herausstellen wird eine Herausforderung dar, da der Programm-Code, welcher die
+herausstellen wird, eine Herausforderung dar, da der Programm-Code, welcher die
 Notification im Hintergrundmodus der App (also,  wenn die App gerade nicht 
-geöffnet oder nur im Hintergrund geöffnet ist) empfängt und verarbeitet in einer 
-anderen Isolate \footnote{Eine Isolate lässt sich mit Threads anderer 
-Programmiersprachen und Betriebssysteme vergleichen} ist, als der Code 
-der den Vordergrund-Teil der App verarbeitet, wodurch unter anderem nicht 
-auf die gleichen Daten zugegriffen werden kann, etc.
+geöffnet oder nur im Hintergrund geöffnet ist) empfängt und verarbeitet, in einer 
+anderen Isolate (Eine Isolate lässt sich mit Threads anderer 
+Programmiersprachen und Betriebssysteme vergleichen\cite{Isolates}) ist, als der Code, 
+der den Vordergrund-Teil der App verarbeitet, wodurch unter Anderem nicht 
+auf die gleichen Daten zugegriffen werden kann.
 
-Um Firebase-Messaging zu nutzen muss zunächst auf der Firebase-Seite ein Projekt 
+Um Firebase-Messaging zu nutzen muss zunächst auf der Firebase-Webseite ein Projekt 
 konfiguriert werden, in welchem festgelegt wird, welche Apps dem Projekt angehören 
 und die Nachrichten vom Server erhalten. Danach müssen die Apps, die in diesem 
-Projekt genutzt werden sollen konfiguriert werden. Um eine Android-App zu 
-Konfigurieren muss der Android-Paketname und ein Name zur Identifizierung 
+Projekt genutzt werden sollen, konfiguriert werden. Um eine Android-App zu 
+Konfigurieren, muss der Android-Paketname und ein Name zur Identifizierung 
 der App angegeben werden. Im Anschluss muss dann eine Konfigurationsdatei 
 (google-services.json) heruntergeladen werden und dem Flutter-Projekt hinzugefügt 
 werden (siehe Abbildung).
 
-Das gleiche muss auch für iOS gemacht werden nur, dass der Ort und die Art der 
+Das gleiche muss auch für iOS gemacht werden, nur, dass der Ort und die Art der 
 Konfigurationsdatei variiert (siehe Abbildung). Bei iOS ist es somit eine 
 Info.plist-Datei anstatt der google-services.json-Datei.
 
-Danach muss noch jeweils Plattform spezifischer Code eingefügt werden, worauf 
+Danach muss noch jeweils plattformspezifischer Code eingefügt werden, worauf 
 ich jetzt jedoch nicht weiter eingehen werde, da dieser von Firebase selbst 
 vorgegeben wird und nur an der richtigen Stelle eingefügt werden muss.
 Um jetzt jedoch Firebase-Messaging nutzen zu können muss zunächst im Code die 
 Firebase-App initialisiert werden und danach ein Background-Prozess gestartet 
-werden, damit die Alarme auch wenn die App geschlossen ist empfangen werden können.
+werden, damit die Alarme, auch wenn die App geschlossen ist empfangen werden können.
 
 Um diesen Hintergrundprozess zu starten muss eine Methode erstellt werden, die die 
 empfangenen Nachrichten verarbeitet. Dafür muss in der Methode 
-FirebaseMessaging.onBackgroundMessage() eine globale Methode mitgegeben werden. 
-Außerdem muss auf die Methode FirebaseMessaging.onMessage gehorcht werden. 
+FirebaseMessaging.onBackgroundMessage() eine globale Methode übergeben werden. 
+Außerdem erwartet das Programm dauerhaft eine Änderung in der Methode FirebaseMessaging.onMessage.
 Dies geschieht durch den Aufruf von \glqq .listen\grqq{} auf die Methode 
 FirebaseMessaging.onMessage. In der Methode listen() muss dann erneut die Nachricht, 
-welche vom Server gesendet wurde verarbeitet werden. Außerdem muss auf die Methode 
+welche vom Server gesendet wurde, verarbeitet werden. Außerdem muss auf die Methode 
 Firebase.instance.onTokenRefresh gehört werden, um die Verarbeitung zu regeln, wenn
 der App ein neuer Token zugewiesen wird. Als letzte Methode muss dann noch auf die 
 Methode FirebaseMessaging.onMessageOpenedApp() gehört werden, sodass verarbeitet 
-werden kann wenn die App über das Klicken auf die Benachrichtigung geöffnet wird.
+werden kann, wenn die App über das Klicken auf die Benachrichtigung geöffnet wird.
 
-In diesem Projekt wird, wenn sich der Token abändert, der Token an den Server 
-übermittelt, damit der/die Nutzer/-in jeder Zeit alarmiert werden kann, da sollte 
-der Token der App unterschiedlich sein zu dem, der auf dem Server gespeichert ist, 
-kann der/die Nutzer/-in nicht über die Firebase-Nachrichten erreicht werden.
+In diesem Projekt wird, wenn der Token sich verändert, der Token an den Server übermittelt um
+den gespeicherten Token zu aktualisieren. Dies muss durchgeführt werden, damit der/die Nutzer/-in
+jederzeit über den neuen Token Alarme empfangen kann. Dies würde nicht möglich sein, sollte der 
+gespeicherte Token nicht mehr zu dem von der App zugewiesenen Token passen.
 
 In der listen-Methode von FirebaseMessaging.onMessageOpenedApp() wird zurzeit als 
-einziges der Alarmsound gestoppt, ich habe mich dazu entschieden dies hier einzubauen, 
+einziges der Alarmsound gestoppt. Ich habe mich dazu entschieden dies hier einzubauen, 
 da die Sanitäter/-innen meist ihr Handy zunächst entsperren und im Anschluss dann auf 
-die Benachrichtigung gucken, da die Sanitäter/-innen dann meist auf die Benachrichtigung 
-klicken, da sie so die App öffnen können, hielt ich es am sinnvollsten das Stoppen des 
-Sounds hier einzubauen, zusätzlich zu der Möglichkeit den Sound durch das Rückmelden in 
-der App auszuschalten.
+die Benachrichtigung gucken. Es ist außerdem möglich den Alarmsound durch das Betätigen der
+Alarmrückmeldungs-Buttons zu stoppen.
 
 In der Methode onBackgroundMessage müssen deutlich mehr Daten verarbeitet werden. 
-Zu aller Erst wird überprüft ob die Nachricht das das Attribut\glqq Backpack\grqq{} mit 
-dem Wert \glqq true\grqq{}enthält um zu überprüfen ob dies eine Benachrichtigung darüber 
-ist, dass jemand anderes das Material holt oder ob die Firebase-Nachricht ein Alarm ist. 
-Danach müssen die Alarmdaten, welche durch die Firebase-Nachricht empfangen wurden in die 
+Zuallererst wird überprüft, ob die Nachricht das Attribut \glqq Backpack\grqq{} mit 
+dem Wert \glqq true\grqq{} enthält um zu überprüfen ob dies eine Benachrichtigung darüber 
+ist, dass jemand anderes das Material holt, oder ob die Firebase-Nachricht ein Alarm ist. 
+Danach müssen die Alarmdaten, welche durch die Firebase-Nachricht empfangen wurden, in die 
 Datenbank geschrieben werden, um diese auch später noch anzeigen zu lassen.
-Zeitgleich wird außerdem der Alarmsound gestartet um den/die Sanitäter/-in über den 
+Zeitgleich wird außerdem der Alarmsound gestartet, um den/die Sanitäter/-in über den 
 Alarm zu informieren.
 
 Zuletzt wird dann eine Request an den Server gesendet, in welcher darüber informiert 
-wird, dass der Alarm von der Nutzer/-in empfangen wurde. Dazu wird dem Server die NutzerID,
-die SanitätsdienstID und die Rückmeldung als int geschickt, in diesem Fall wird 0 
+wird, dass der Alarm von dem/der Nutzer/-in empfangen wurde. Dazu wird dem Server die NutzerID,
+die SanitätsdienstID und die Rückmeldung als \texttt{int} geschickt, in diesem Fall wird 0 
 mitgeschickt, da dies die Information ist, dass der Alarm empfangen wurde.

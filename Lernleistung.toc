@@ -9,22 +9,20 @@
 \contentsline {subsection}{\numberline {3.3}Version 3 - Flutter}{9}{}%
 \contentsline {section}{\numberline {4}Entwicklung}{10}{}%
 \contentsline {subsection}{\numberline {4.1}Funktionen der App}{10}{}%
-\contentsline {subsubsection}{\numberline {4.1.1}Rollen und Registrierung}{10}{}%
-\contentsline {subsubsection}{\numberline {4.1.2}Alarmauslösung}{15}{}%
-\contentsline {subsubsection}{\numberline {4.1.3}Alarmempfang}{17}{}%
-\contentsline {subsubsection}{\numberline {4.1.4}Vertretungen}{18}{}%
-\contentsline {subsubsection}{\numberline {4.1.5}News \& Notfallnummern}{19}{}%
-\contentsline {subsubsection}{\numberline {4.1.6}Berechtigungen \& Fehler}{19}{}%
-\contentsline {subsection}{\numberline {4.2}Kommunikation mit dem Server}{20}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}API-Nutzung}{21}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}Nutzung von Firebase-Messaging}{21}{}%
-\contentsline {subsection}{\numberline {4.3}Speicherung der Daten}{25}{}%
-\contentsline {subsubsection}{\numberline {4.3.1}Umsetzung}{25}{}%
-\contentsline {subsubsection}{\numberline {4.3.2}Aufbau der Datenbank}{26}{}%
-\contentsline {section}{\numberline {5}Schultests}{29}{}%
-\contentsline {section}{\numberline {6}Fazit}{30}{}%
-\contentsline {subsection}{\numberline {6.1}Was wurde erreicht}{30}{}%
-\contentsline {subsection}{\numberline {6.2}Wie geht es weiter}{31}{}%
-\contentsline {section}{\numberline {7}Abbildungsverzeichnis}{33}{}%
-\contentsline {section}{\numberline {8}Literaturverzeichnis}{33}{}%
-\contentsline {section}{\numberline {9}Anhang}{35}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Rollen und Registrierung}{11}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Alarmauslösung}{16}{}%
+\contentsline {subsubsection}{\numberline {4.1.3}Alarmempfang}{18}{}%
+\contentsline {subsubsection}{\numberline {4.1.4}Vertretungen}{19}{}%
+\contentsline {subsubsection}{\numberline {4.1.5}News \& Notfallnummern}{20}{}%
+\contentsline {subsubsection}{\numberline {4.1.6}Berechtigungen \& Fehler}{20}{}%
+\contentsline {subsection}{\numberline {4.2}Kommunikation mit dem Server}{22}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}API-Nutzung}{22}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Nutzung von Firebase-Messaging}{23}{}%
+\contentsline {subsection}{\numberline {4.3}Speicherung der Daten}{26}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Umsetzung}{26}{}%
+\contentsline {subsubsection}{\numberline {4.3.2}Aufbau der Datenbank}{27}{}%
+\contentsline {section}{\numberline {5}Schultests}{30}{}%
+\contentsline {section}{\numberline {6}Fazit}{31}{}%
+\contentsline {subsection}{\numberline {6.1}Was wurde erreicht}{31}{}%
+\contentsline {subsection}{\numberline {6.2}Wie geht es weiter}{33}{}%
+\contentsline {section}{\numberline {7}Anhang}{35}{}%

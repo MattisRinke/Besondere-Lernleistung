@@ -1,8 +1,8 @@
 \section{Wahl der Entwicklungsweise}
-    Es gibt in der Programmierung etliche Möglichkeiten der Programmierung. Auch in der 
+   Es gibt etliche Möglichkeiten zu programmieren. Auch bei der 
     Entwicklung für mobile Endgeräte. Mit dem Projektstart wählte ich den mir zunächst am 
     sinnvollsten erscheinenden Weg der nativen Entwicklung.
-    Die native Entwicklung. Dadurch, dass die App für unterschiedliche Betriebssysteme 
+    Dadurch, dass die App für unterschiedliche Betriebssysteme 
     erhältlich sein soll, muss die native Entwicklung sowohl für das Betriebssystem iOS 
     \cite{iOS} von Apple durchgeführt werden, als auch für das Betriebssystem Android 
     \cite{Android}, von Google.
@@ -21,47 +21,48 @@
     heraus, da in der Programmiersprache Java geschrieben wird, die mir aus dem Informatik-
     Unterricht bereits bekannt war.
     Nach kurzer Zeit lag eine vorläufig fertig programmierte App vor, die einen zuverlässigen 
-    Empfang und das Auslösen eines Alarms ermöglichte. Da dieser App jedoch auch zuerst nur 
-    für den Schulsanitätsdienst meiner eigenen Schule gedacht war gab es hier kein Registrier-
-    und Login-Verfahren genauso wenig wie die Notfallnummern, die News und die Einstellungen.
+    Empfang und das Auslösen eines Alarms ermöglichte. Da diese App jedoch auch zuerst nur 
+    für den Schulsanitätsdienst meiner eigenen Schule gedacht war, gab es hier kein Registrier-
+    und Login-Verfahren, genauso wenig wie die Notfallnummern, die News und die Einstellungen.
     Diese App war also nur auf den Sanitätsdienst meiner eigenen Schule zugeschnitten.
 
-    Da es jedoch auch iOS-Geräte in diesem Sanitätsdienst gibt, musste ich schnell merken, 
-    dass ich auch hier eine App programmieren muss. Also habe ich mich informiert und habe 
-    wie ich für iOS entwickle und die App auch für iOS-Geräte veröffentlichen kann.
+    Da es jedoch auch iOS-Geräte in diesem Sanitätsdienst gibt, merkte ich schnell, 
+    dass ich auch hier eine App programmieren muss. Also habe ich mich informiert,
+    wie ich für iOS entwickeln und die App auch für iOS-Geräte veröffentlichen kann.
     Die Programmierung für iOS findet nativ in den Programmiersprachen Swift und Objective-C
-    statt, was mich vor ein weiteres Problem gestellt hat. Ich bin weder mit der Programmiersprache
+    statt, was mich vor ein weiteres Problem stellte. Ich bin weder mit der Programmiersprache
     Swift noch mit der Programmiersprache Objective-C vertraut, was bedeuten würde, dass ich mir
-    diese von null auf beibringen müsste. Dies wäre zwar sehr unangenehm, jedoch möglich gewesen.
-    Ich habe jedoch erst ein Mal weiter recherchiert und bin auf die nächste Barriere gestoßen:
+    diese von null auf hätte beibringen müssen. Dies wäre zwar sehr unangenehm, jedoch möglich gewesen.
+    Ich habe jedoch erst einmal weiter recherchiert und bin auf die nächste Barriere gestoßen:
     Um die App veröffentlichen zu können muss ich einen Apple-Developer-Account haben um die App
-    im Appstore veröffentlichen zu können. Da diese 99€ im Jahr kostet bin ich zu dem Entschluss 
+    im Appstore veröffentlichen zu können. Da dieser 99€ im Jahr kostet bin ich zu dem Entschluss 
     gekommen, dass es für mich nicht möglich ist die App nur für den Sanitätsdienst meiner eigenen Schule
-    zu entwickeln. Um dieses Problem zu umgehen habe ich mich dazu entschieden die App nicht 
+    zu entwickeln. Damit ich dieses Problem umgehen konnte, habe ich mich dazu entschieden die App nicht 
     nur für meinen eigenen Sanitätsdienst zu entwickeln, sondern diese auch an weitere Sanitätsdienste
     zu verkaufen. Um dies zu bewerkstelligen musste ich jetzt also zum einen die App sowohl für
     Android, als auch für iOS zu entwickeln, da der Marktanteil von Apple bei 30\% und der von Google bei
-    70\% liegen\cite[vgl.]{Marktanteil}. Bei der nativen Entwicklung müsste ich jetzt also 
+    70\% liegen \cite[vgl.]{Marktanteil}. Bei der nativen Entwicklung müsste ich jetzt also 
     den Code für das \glqq gleiche\grqq{} Produkt zweimal schreiben, da ich die App einmal in
-    Objective-C/Swift und einmal in Java/Kotlin schreiben müsste.
+    Objective-C/Swift und einmal in Java/Kotlin(Kotlin ist eine weitere Programmiersprache, in der 
+    es möglich ist Apps für Android zu programmieren) schreiben müsste.
     Dies ist als Einzelperson nicht machbar, weshalb ich mich neu orientierte. 
     Recherchearbeiten führten mich dann zu der Methode des Cross-Platform-
     Programmings, welche in den nächsten zwei Unterkapiteln erläutert werden.
 
 \subsection{Version 2 - Xamarin Forms}
 
-    Xamarin Forms ist ein Framework der \textbf{.NET-Plattform} von Microsoft. Dieses 
+    Xamarin Forms ist ein Framework der sogenannten \glqq .NET-Plattform\grqq{} von Microsoft. Dieses 
     Framework ist ein Cross-Platform-Framework, das heißt, dass der Code einmalig für 
     die beiden Betriebssysteme (Android \& iOS) geschrieben wird und die App dann für 
     beide erhältlich ist. Xamarin Forms hat eine Unterteilung zwischen dem funktionalen 
-    Code, welcher in C\# geschrieben ist, und zwischen der der Markup Language XAML, 
-    welche das GUI darstellt\cite[vgl.]{Xamarin}. Jedoch sind bei der Nutzung von Cross-
-    Platform-Frameworks auch Einbußungen zu machen. In diesem Fall konnte ich mich zum 
-    einen nicht mit der Markup Language XAML anfreunden, da hier das neu laden des GUIs 
+    Code, welcher in der Programmiersprache C\# geschrieben ist, und zwischen der der Markup Language XAML, 
+    welche die Benutzeroberfläche, oder auch das Graphical User Interface (GUI) genannt, darstellt\cite[vgl.]{Xamarin}. 
+    Jedoch sind bei der Nutzung von Cross-Platform-Frameworks auch Einbußen zu erleiden. In diesem Fall konnte ich mich zum 
+    einen nicht mit der Markup Language XAML anfreunden, da hier das Neuladen des GUIs 
     als sehr sperrig und aufwendig herausstellte, zum anderen stellte sich heraus, dass 
     Xamarin einige von mir benötigte Funktionen nicht voll oder gar nicht unterstützt. 
-    Unter anderem gab es immer wieder Probleme beim Einbinden von Firebase-Messaging, ein
-    Tool von Google, zum Versenden von Push-Notifications (Auf Firebase-Messaging wird im
+    Unter anderem gab es immer wieder Probleme beim Einbinden von Firebase-Messaging, einem
+    Tool von Google zum Versenden von Push-Notifications (Auf Firebase-Messaging wird im
     weiteren Verlauf der Ausarbeitung noch eingegangen).
     Durch diese für mich nicht lösbaren Probleme musste ich mich dann erneut auf die Suche
     nach einer anderen Lösung machen. Um diese Lösung geht es jetzt im nächsten Abschnitt.
@@ -69,16 +70,16 @@
 \subsection{Version 3 - Flutter}
 
     Die dritte und bis jetzt finale Version ist in Flutter geschrieben und die am weitesten 
-    entwickelte App-Version. Die Entscheidung für Flutter viel nach mehreren Empfehlungen, 
+    entwickelte App-Version. Die Entscheidung für Flutter fiel nach mehreren Empfehlungen, 
     z.B. durch einen Freund, welcher bereits durch ein Praktikum bei der Firma d.velop mit 
     diesem Erfahrung sammeln konnte, sowie nach eigener Recherche. Flutter nutzt eine 
-    einfache Programmiersprache, die Java ähnelt, weshalb mir der Einstieg in die 
-    Programmiersprache Dart\cite{Dart} nicht schwergefallen ist. Flutter ist wie Xamarin-Forms
-    ein Cross-Platform Framework. Dieses ist in der Lage Apps für die beiden gängigen 
-    Plattformen iOS und Android zu kompilieren\footnote{Kompilieren beschreibt das Umwandeln
-    des geschriebenen Programmtextes in ein funktionsfähiges Programm}, sowie für das Web.
-    Das Nutzer-Interface ist in Flutter durch so genannte Widgets, welche in einem Widget-
-    Tree aufgenommen werden, dargestellt. Hierbei wird dann zwischen \glqq Stateless\grqq
+    einfache Programmiersprache, die Java ähnelt, weshalb mir der Einstieg in diese 
+    Programmiersprache, Dart\cite{Dart}, nicht schwergefallen ist. Flutter ist wie Xamarin-Forms
+    ein Cross-Platform Framework. Dieses ist in der Lage, Apps für die beiden gängigen 
+    Plattformen iOS und Android, sowie für das Web zu kompilieren (Kompilieren beschreibt das Umwandeln
+    des geschriebenen Programmtextes in ein funktionsfähiges Programm).
+    Das Nutzer-Interface ist in Flutter durch sogenannte Widgets, welche in einem \glqq Widget-Tree\grqq{} 
+    aufgenommen werden, dargestellt. Hierbei wird dann zwischen \glqq Stateless\grqq
     \cite{Stateless-Widget}- und \glqq Stateful\grqq\cite{Stateful-Widget}-Widgets unterschieden. 
     Der Unterschied liegt darin, dass in \glqq Stateless-Widgets\grqq{} zwar Variablen, etc. abgeändert 
     werden können, jedoch wird das Widget im GUI nicht neu gerendert. Es können aber in dem 
@@ -92,11 +93,12 @@
     \glqq setState\grqq{} das UI aktualisiert werden. Außerdem gibt es asynchrone Methoden und 
     Futures\cite{Futures}. Diese sind dazu da das Programm weiterhin Code ausführen zu lassen,
     während das Programm gleichzeitig darauf wartet, dass die asynchrone Methode fertig wird. 
-    Dies wird oft dazu genutzt Daten vom Netzwerk zu laden oder in eine Datenbank zu 
-    schreiben. Die meist genutzten Datentypen sind: int, String, bool, List, Future und Map.
-    Nach einiger Überlegung und Recherchen ist die Entscheidung letztendlich für flutter als 
+    Dies wird oft dazu genutzt, Daten vom Netzwerk zu laden oder in eine Datenbank zu 
+    schreiben. Die meistgenutzten Datentypen sind: \texttt{int}, \texttt{String}, \texttt{bool}, \texttt{List}, 
+    \texttt{Future} und \texttt{Map}.
+    Nach einiger Überlegung und Recherchen ist die Entscheidung letztendlich für Flutter als 
     Framework gefallen, weil zum einen nur einmal Code für die beiden Plattformen iOS und 
     Android geschrieben werden muss und zum anderen das GUI einfacher programmierbar ist als 
     z.B. mit Xamarin Forms und Flutter sehr performant ist. In dieser Version sind die Funktionen
-    der Alarmierung, des Alarm Empfangens, der Vertretung für den aktuellen Tag, das wählen von 
+    der Alarmierung, des Alarm Empfangens, der Vertretung für den aktuellen Tag, das Wählen von 
     Notfallnummern, die News und die Einstellungen implementiert.
