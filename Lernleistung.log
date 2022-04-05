@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.20)  4 APR 2022 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.20)  5 APR 2022 09:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/OneDrive/_Schule/_Abitur_Faecher/Informatik/Besondere Lernleistung/Lernleistung.tex"
-(d:/OneDrive/_Schule/_Abitur_Faecher/Informatik/Besondere Lernleistung/Lernleistung.tex
+**"c:/Users/matti/OneDrive/_Schule/_Abitur_Faecher/Informatik/Besondere Lernleistung/Lernleistung.tex"
+(c:/Users/matti/OneDrive/_Schule/_Abitur_Faecher/Informatik/Besondere Lernleistung/Lernleistung.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-01-12> (e:/Latex/texlive/2021/texmf-dist/tex/latex/base/article.cls
+L3 programming layer <2022-01-12> (c:/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(e:/Latex/texlive/2021/texmf-dist/tex/latex/base/size12.clo
+(c:/texlive/2021/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
@@ -22,51 +22,51 @@ File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2021/11/01 v4.49 (NLCT)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
- (e:/Latex/texlive/2021/texmf-dist/tex/generic/xkeyval/xkeyval.tex (e:/Latex/texlive/2021/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+ (c:/texlive/2021/texmf-dist/tex/generic/xkeyval/xkeyval.tex (c:/texlive/2021/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks18
 \XKV@tempa@toks=\toks19
- (e:/Latex/texlive/2021/texmf-dist/tex/generic/xkeyval/keyval.tex))
+ (c:/texlive/2021/texmf-dist/tex/generic/xkeyval/keyval.tex))
 \XKV@depth=\count193
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (e:/Latex/texlive/2021/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+)) (c:/texlive/2021/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2021/10/15 v2.07 (NLCT)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count194
 )
 \@glsmfirst=\toks20
 \@glsmrest=\toks21
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/textcase/textcase.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/xfor/xfor.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/datatool/datatool-base.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2019/09/27 v2.32 (NLCT)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-(e:/Latex/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks22
 \ex@=\dimen139
-)) (e:/Latex/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen140
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
 )
 \inf@bad=\count195
@@ -106,17 +106,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/substr/substr.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
 \c@su@anzahl=\count273
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/datatool/datatool-fp.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2019/09/27 v2.32 (NLCT)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/fp/fp.sty
 Package: fp 1995/04/02
- `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/defpattern.sty
+ `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (c:/texlive/2021/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
 \actioncount=\count274
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-basic.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
 \FP@xs=\count275
 \FP@xia=\count276
@@ -127,24 +127,24 @@ Package: fp-basic 1996/05/13
 \FP@regb=\count281
 \FP@regs=\count282
 \FP@times=\count283
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-addons.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-snap.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-snap.sty
 Package: fp-snap 1995/04/05
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-exp.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-exp.sty
 Package: fp-exp 1995/04/03
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-trigo.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-trigo.sty
 Package: fp-trigo 1995/04/14
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-pas.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-pas.sty
 Package: fp-pas 1994/08/29
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-random.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
 \FPseed=\count284
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-eqn.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-upn.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-upn.sty
 Package: fp-upn 1996/10/21
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/fp/fp-eval.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks27
@@ -156,7 +156,7 @@ Package: fp-eval 1995/04/03
 \dtl@codeA=\count289
 \dtl@codeB=\count290
 \@dtl@foreach@level=\count291
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-307.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-307.sty
 Package: glossaries-compatible-307 2021/11/01 v4.49 (NLCT)
 )
 \gls@level=\count292
@@ -166,14 +166,14 @@ Package: glossaries-compatible-307 2021/11/01 v4.49 (NLCT)
 \glslabeltok=\toks30
 \glsshorttok=\toks31
 \glslongtok=\toks32
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
 Package: glossary-hypernav 2021/11/01 v4.49 (NLCT)
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 Package: glossary-list 2021/11/01 v4.49 (NLCT)
 \glslistdottedwidth=\skip54
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
 Package: glossary-long 2021/11/01 v4.49 (NLCT)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/tools/longtable.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTleft=\skip55
 \LTright=\skip56
@@ -194,9 +194,9 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 )
 \glsdescwidth=\skip59
 \glspagelistwidth=\skip60
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
 Package: glossary-super 2021/11/01 v4.49 (NLCT)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/supertabular/supertabular.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \c@tracingst=\count298
 \ST@wd=\dimen149
@@ -213,55 +213,74 @@ Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \ST@toadd=\dimen157
 \ST@dimen=\dimen158
 \ST@pbox=\box57
-)) (e:/Latex/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+)) (c:/texlive/2021/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2021/11/01 v4.49 (NLCT)
 \glstreeindent=\skip64
-)) (e:/Latex/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
+)) (c:/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2021/12/30 3.69 The Babel package
 \babel@savecnt=\count299
 \U@D=\dimen159
 \l@unhyphenated=\language87
- (e:/Latex/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def)
+ (c:/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count300
- (e:/Latex/texlive/2021/texmf-dist/tex/generic/babel-german/german.ldf
+ (c:/texlive/2021/texmf-dist/tex/generic/babel-german/german.ldf
 Language: german 2021/02/27 v2.13 German support for babel (pre-1996 orthography)
- (e:/Latex/texlive/2021/texmf-dist/tex/generic/babel-german/germanb.ldf
+ (c:/texlive/2021/texmf-dist/tex/generic/babel-german/germanb.ldf
 Language: germanb 2021/02/27 v2.13 German support for babel (pre-1996 orthography)
 Package babel Info: Making " an active character on input line 139.
-))) (e:/Latex/texlive/2021/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+))) (c:/texlive/2021/texmf-dist/tex/latex/hyphenat/hyphenat.sty
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
 \langwohyphens=\language88
 LaTeX Info: Redefining \_ on input line 43.
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+ (c:/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (c:/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (c:/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/setspace/setspace.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/float/float.sty
+) (c:/texlive/2021/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count301
 \float@exts=\toks34
 \float@box=\box58
 \@float@everytoks=\toks35
 \@floatcapt=\box59
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (c:/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (c:/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (c:/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count302
+\Gm@cntv=\count303
+\c@Gm@tempcnt=\count304
+\Gm@bindingoffset=\dimen162
+\Gm@wd@mp=\dimen163
+\Gm@odd@mp=\dimen164
+\Gm@even@mp=\dimen165
+\Gm@layoutwidth=\dimen166
+\Gm@layoutheight=\dimen167
+\Gm@layouthoffset=\dimen168
+\Gm@layoutvoffset=\dimen169
+\Gm@dimlist=\toks36
+) (c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count302
+\l__color_backend_stack_int=\count305
 \l__pdf_internal_box=\box60
-) (./Lernleistung.aux)
+) (./Lernleistung.aux (./Unterdateien/01Projekt.aux) (./Unterdateien/02Entwicklungsweise.aux) (./Unterdateien/06Schultest.aux) (./Unterdateien/07Fazit.aux))
 \openout1 = `Lernleistung.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -278,53 +297,97 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
- (e:/Latex/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
-\scratchdimen=\dimen162
+\scratchcounter=\count306
+\scratchdimen=\dimen170
 \scratchbox=\box61
-\nofMPsegments=\count304
-\nofMParguments=\count305
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count306
-\MPscratchDim=\dimen163
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
-\everyMPtoPDFconversion=\toks37
-) (e:/Latex/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\nofMPsegments=\count307
+\nofMParguments=\count308
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count309
+\MPscratchDim=\dimen171
+\MPnumerator=\count310
+\makeMPintoPDFobject=\count311
+\everyMPtoPDFconversion=\toks38
+) (c:/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (e:/Latex/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (c:/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(113.81102pt, 389.51842pt, 110.96556pt)
+* v-part:(T,H,B)=(110.96556pt, 573.03886pt, 110.96556pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=389.51842pt
+* \textheight=573.03886pt
+* \oddsidemargin=41.54103pt
+* \evensidemargin=41.54103pt
+* \topmargin=1.69557pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=21.33955pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 <images/Nepo_Logo.png, id=1, 332.24126pt x 185.69376pt>
 File: images/Nepo_Logo.png Graphic file (type png)
 <use images/Nepo_Logo.png>
 Package pdftex.def Info: images/Nepo_Logo.png  used on input line 40.
 (pdftex.def)             Requested size: 142.26274pt x 71.13388pt.
- [1
+[1
 
-{e:/Latex/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/Nepo_Logo.png>] (./Lernleistung.toc [2])
+{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/Nepo_Logo.png>] (./Lernleistung.toc)
 \tf@toc=\write3
 \openout3 = `Lernleistung.toc'.
 
- [3] [4] (./Unterdateien/01Projekt.tex [5]) (./Unterdateien/02Entwicklungsweise.tex [6] [7] [8]) [9] (./Unterdateien/03AppFunktionen.tex
+ [2] [3] [4] [5]
+\openout2 = `Unterdateien/01Projekt.aux'.
+
+ (./Unterdateien/01Projekt.tex) [6
+
+] [7]
+\openout2 = `Unterdateien/02Entwicklungsweise.aux'.
+
+ (./Unterdateien/02Entwicklungsweise.tex [8
+
+
+
+] [9]) [10] [11] (./Unterdateien/03AppFunktionen.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--34
 
  []
 
+[12
 
-Underfull \hbox (badness 1237) in paragraph at lines 9--34
-\OT1/cmr/m/n/12 ha-be) oben an-ge-leg-ten Such-lei-ste her-aus-zu-su-chen. Im An-schluss muss
- []
 
-[10]
+]
 Underfull \hbox (badness 10000) in paragraph at lines 43--94
 
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 43--94
+Underfull \hbox (badness 2050) in paragraph at lines 43--94
 \OT1/cmr/m/n/12 Nachdem der/die Sa-nit[]ater/-in dann sei-nen/ihren Sa-nit[]atsdienst aus-
  []
 
@@ -334,17 +397,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--94
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 43--94
+Underfull \hbox (badness 1210) in paragraph at lines 43--94
 \OT1/cmr/m/n/12 die-se vor-han-den sind. Da-nach wird kon-trol-liert, wel-che Nutzer/-innen
  []
 
-[11] [12]
-Underfull \hbox (badness 2343) in paragraph at lines 108--141
+[13] [14]
+Underfull \hbox (badness 2253) in paragraph at lines 108--141
 []\OT1/cmr/m/n/12 Das Registrier-Verfahren ist kom-pli-zier-ter. Nach dem Auf-ruf von
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 108--141
+Underfull \hbox (badness 1308) in paragraph at lines 108--141
 \OT1/cmr/m/n/12 Re-gi-strie-rung an-zu-ge-ben, dass durch die Lei-tung des Sa-nit[]atsdienstes
  []
 
@@ -354,17 +417,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--141
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 108--141
-\OT1/cmr/m/n/12 ein-deu-tig zu iden-ti-fi-zie-ren. Um si-cher zu ge-hen, dass das gew[]unschte
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 108--141
 
  []
 
-[13] [14]
-Underfull \hbox (badness 1102) in paragraph at lines 142--169
+[15]
+Underfull \hbox (badness 1048) in paragraph at lines 142--169
 \OT1/cmr/m/n/12 m[]oglicherweise emp-fan-ge-ner Alarm auch dann durch den Alarm-sound
  []
 
@@ -373,44 +431,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--169
 
  []
 
-[15] [16]
+
+Underfull \hbox (badness 1895) in paragraph at lines 142--169
+\OT1/cmr/m/n/12 Account-Namen fest-le-gen. Die-ser be-steht je-doch nicht aus Vor- und
+ []
+
+[16] [17]
 Underfull \hbox (badness 10000) in paragraph at lines 203--211
 
  []
 
-[17] [18] [19] [20]) (./Unterdateien/04Server.tex [21] [22] [23] [24]
-Underfull \hbox (badness 1331) in paragraph at lines 97--108
+[18] [19] [20] [21]) (./Unterdateien/04Server.tex [22] [23] [24]
+Underfull \hbox (badness 1281) in paragraph at lines 97--108
 \OT1/cmr/m/n/12 wer-den, die die emp-fan-ge-nen Nach-rich-ten ver-ar-bei-tet. Daf[]ur muss in
  []
 
-[25]) (./Unterdateien/05Datenbank.tex [26] [27] [28]) (./Unterdateien/06Schultest.tex [29]) (./Unterdateien/07Fazit.tex [30] [31] [32] [33]) (./Lernleistung.lof)
+[25]) (./Unterdateien/05Datenbank.tex [26] [27] [28] [29]) [30]
+\openout2 = `Unterdateien/06Schultest.aux'.
+
+ (./Unterdateien/06Schultest.tex) [31
+
+] [32]
+\openout2 = `Unterdateien/07Fazit.aux'.
+
+ (./Unterdateien/07Fazit.tex [33
+
+
+
+] [34] [35]) [36] (./Lernleistung.lof)
 \tf@lof=\write4
 \openout4 = `Lernleistung.lof'.
 
- [34]
-Underfull \hbox (badness 2521) in paragraph at lines 154--156
+
+Underfull \hbox (badness 1939) in paragraph at lines 152--154
 []\OT1/cmr/m/n/12 https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html, Do-
  []
 
-[35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
+[37
+
+
+] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
 
  []
 
-[37] (./Lernleistung.aux) ) 
+[39] (./Lernleistung.aux (./Unterdateien/01Projekt.aux) (./Unterdateien/02Entwicklungsweise.aux) (./Unterdateien/06Schultest.aux) (./Unterdateien/07Fazit.aux)) ) 
 Here is how much of TeX's memory you used:
- 7716 strings out of 478286
- 129924 string characters out of 5847732
- 491092 words of memory out of 5000000
- 25760 multiletter control sequences out of 15000+600000
+ 8365 strings out of 478286
+ 142008 string characters out of 5850726
+ 504906 words of memory out of 5000000
+ 26382 multiletter control sequences out of 15000+600000
  475299 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 91i,6n,91p,1213b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
-{e:/Latex/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<e:/Latex/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><e:/Latex/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><e:/Latex/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><e:/Latex/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><e:/Latex/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Lernleistung.pdf (37 pages, 157110 bytes).
+ 91i,6n,91p,1225b,248s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Lernleistung.pdf (39 pages, 158614 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 161 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

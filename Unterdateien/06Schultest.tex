@@ -1,25 +1,27 @@
 \section{Schultests}
 Um die Funktionalität der App sicherzustellen, wird die App zur Zeit an 
-mehreren Schulen getestet. Dazu wird für die Schulen ein Sanitätsdienst erstellt,
+mehreren Schulen getestet. Dazu wird für die Schulen in der App ein Sanitätsdienst erstellt,
 über welchen diese dann alle Funktionen testen können. Sollte dann ein Fehler
-auftreten, können die Nutzer/-innen diesen über ein Fehler-Formular melden. 
-Jedoch können nicht nur Fehler gemeldet, sondern auch generell Feedback, über ein
-dediziertes Fehler-Formular, abgeben werden. Dies dient der allgemeinen Verbesserung
+auftreten, können die Nutzer/-innen diesen über ein Fehler-Formular von Google Forms 
+melden, welches dann per E-Mail an mich versandt wird. 
+Jedoch können nicht nur Fehler gemeldet, sondern es kann auch generell Feedback, über ein
+dediziertes Formular, abgeben werden. Dies dient der allgemeinen Verbesserung
 der App in jeglichen Belangen, seien es fehlende Funktionen, Design-Änderungen
-oder nur Lob. Derzeit testen bereits 5 Schulen die App, wobei generell positives
-Feedback zurückkam. Jedoch trat natürlich auch schon der ein oder andere Fehler 
+oder nur Lob. Derzeit testen 6 Schulen die App, wobei generell positives
+Feedback zurückkam. Natürlich trat auch schon der ein oder andere Fehler 
 auf, der dann durch schnelle Kommunikation mit den jeweiligen 
 Ansprechpersonen der Schulen behoben werden konnte.
-Zum Beispiel wurde bereits die Wahrscheinlichkeit erhöht, in der ein Alarm 
+Zum Beispiel wurde bereits die Zuverlässigkeit erhöht, mit der ein Alarm 
 ankommt. Hier gab es vor allem am Anfang größere Probleme, da immer wieder 
 Sonderfälle (z.B. wurde auf manchen Geräten die Berechtigung für die Batterie-Optimierung
 mehrmals abgefragt, obwohl die Berechtigung schon gegeben wurde) aufgetreten sind, durch 
 die Fehler aufgetreten sind. Dadurch, dass in der App dann Fehler (z.B. gab es auch Probleme
-mit dem versenden von http-Anfragen zum Versenden der \glqq Empfangen\grqq{} Rückmeldung) 
-aufgetreten sind konnte der Alarm nicht abgespielt und angezeigt werden. Dies konnte dann 
+mit dem versenden von http-Anfragen, die dem Server zurückmelden, dass der Alarm empfangen wurde) 
+aufgetreten sind, konnte der Alarm nicht abgespielt und angezeigt werden. Dies konnte dann 
 durch die Rückmeldungen der Schulen behoben werden. Andere Fehler waren beispielsweise 
 auch Grafikfehler, bei denen dann gewisse Grafikobjekte nicht korrekt angezeigt wurden 
-oder abgeschnitten waren. Dies konnte ebenfalls durch genaue Rückmeldungen behoben werden.
+oder abgeschnitten waren. Diese Grafikfehler sind aufgrund unterschiedlicher Handygrößen aufgetreten,
+die durch meine Tests nicht aufgefallen sind. Dies konnte ebenfalls durch persönliche Rücksprache behoben werden.
 Des weiteren wurde auch ein Fehler beim Anmelden gemeldet, durch welchen
 man sich weiterhin registrieren konnte, jedoch eine Anmeldung mit einem 
 existenten Account nicht möglich war.
@@ -31,6 +33,6 @@ Fehlerformular möglich, jedoch auch durch einen weiteren Service von Firebase.
 Durch den Fehler-Analyse-Dienst \glqq Firebase-Crashlytics\grqq{} ist es möglich, dass Fehler, die in der App 
 auftreten auf einer Web-Oberfläche angezeigt werden. Durch die Implementation 
 von Firebase-Crashlytics ist durch die, von dem Dienst generierten, Fehler-Meldungen eine Lösungsfindung 
-deutlich einfacher, da hier der Fehler zum einen angezeigt wird und zum anderen
+deutlich einfacher, da hier der Fehler zum einen aufgezeigt wird und zum anderen
 angezeigt wird, an welcher Stelle dieser ist. Dadurch ist es möglich Fehler, die zwar auftreten, jedoch durch den/die
 Nutzer/-in nicht gemeldet werden, weil diese/-r den Fehler ggf. nicht bemerkt hat, behoben werden.

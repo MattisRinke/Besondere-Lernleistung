@@ -7,18 +7,18 @@
 \usepackage{graphicx}
 \usepackage{setspace}
 \usepackage{float}
-%\usepackage{geometry}
+\usepackage{geometry}
 
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
 \graphicspath{\main/images}
-%\geometry{
-%    left = 4cm,
-%    right = 2cm,
-%    top = 2cm,
-%    bottom = 2cm,
-%    footskip = 7.5mm
-%}
+\geometry{
+    left = 4cm,
+    right = 3.9cm,
+    top = 3.9cm,
+    bottom = 3.9cm,
+    footskip = 7.5mm
+}
 \begin{document}
 \sloppy
 \onehalfspacing
@@ -85,12 +85,10 @@
     ich selbst die Digitalisierung von Sanitätsdiensten als sinnvoll und notwendig erachte.
     Hier wurde bisher meist mit Funkgeräten oder auch mit Schuldurchsagen alarmiert, was
     den Schulunterricht drastisch gestört hat.
-    %TODO: Weniger Verschaltet
     Außerdem ist die Alarmierung selbst sehr ineffizient, da zunächst eine Person 
     im Sekretariat oder ähnlichem informiert werden muss, die permanent als 
     Ansprechpartner vor Ort sein muss, informiert wird, um im Anschluss daran die 
     Sanitäter/ -innen zu alarmieren.
-    %TODO: END - Weniger Verschaltet
 
     Deshalb suchte ich nach Apps, die eine Entlastung sowie eine einfache Alarmierung 
     ermöglichen.Ich stieß auf mehrere Apps bei der Recherche, unter anderem sie Apps 
@@ -121,15 +119,15 @@
     in dem ich ausführe, was in der Ausarbeitung bereits umgesetzt wurde und wie die 
     weitere Entwicklung sowie der Umgang mit der App erfolgen kann und soll.
 
-\input{Unterdateien/01Projekt.tex}
-\input{Unterdateien/02Entwicklungsweise.tex}
+\include{Unterdateien/01Projekt.tex}
+\include{Unterdateien/02Entwicklungsweise.tex}
 
 \section{Entwicklung}
 \input{Unterdateien/03AppFunktionen}
 \input{Unterdateien/04Server.tex}
 \input{Unterdateien/05Datenbank.tex}
-\input{Unterdateien/06Schultest.tex}
-\input{Unterdateien/07Fazit.tex}
+\include{Unterdateien/06Schultest.tex}
+\include{Unterdateien/07Fazit.tex}
 
 \section{Anhang}
 \listoffigures
